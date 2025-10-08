@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Visual-Edit — Simple Video Editor</title>
+    <meta
+      name="description"
+      content="Visual-Edit is a simple, fast video editor and portfolio showcasing birthday and portrait edits, smooth scrolling, and professional video editing services. Trim, split, add effects, color grade, and share."
+    />
+    <meta
+      name="keywords"
+      content="video editor, simple video editor, online video editing, birthday video, portrait video, video effects, color grading, audio cleanup, video transitions, video portfolio, smooth scrolling, Locomotive Scroll, frontend developer, web design"
+    />
+    <meta name="robots" content="index, follow" />
+    <meta name="author" content="Visual-Edit" />
+    <meta name="theme-color" content="#0b1220" />
+    <link rel="canonical" href="/" />
+    <link rel="icon" href="images/logo.jpg" type="image/jpeg" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Visual-Edit — Simple Video Editor" />
+    <meta
+      property="og:description"
+      content="Simple, fast video editor and portfolio: birthday and portrait edits, effects, color grading, and more."
+    />
+    <meta property="og:url" content="/" />
+    <meta
+      property="og:image"
+      content="https://images.unsplash.com/photo-1490810194309-344b3661ba39?q=80&w=1200&auto=format&fit=crop"
+    />
+    <meta
+      property="og:image:alt"
+      content="Editing timeline and camera on desk"
+    />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Visual-Edit — Simple Video Editor" />
+    <meta
+      name="twitter:description"
+      content="Simple, fast video editor and portfolio: birthday and portrait edits, effects, color grading, and more."
+    />
+    <meta
+      name="twitter:image"
+      content="https://images.unsplash.com/photo-1490810194309-344b3661ba39?q=80&w=1200&auto=format&fit=crop"
+    />
+
+    <!-- Locomotive Scroll CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.css"
+    />
+
+    <!-- App styles -->
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <!-- Header / Nav (outside the scroll container so it stays fixed) -->
+    <header class="site-header">
+      <div class="container">
+        <a class="logo" href="images/logo.jpg" data-scroll-to>Visual-Edit</a>
+        <button
+          class="nav-toggle"
+          aria-controls="primary-nav"
+          aria-expanded="false"
+          aria-label="Open menu"
+        >
+          <svg
+            class="icon icon-hamburger"
+            viewBox="0 0 24 24"
+            width="24"
+            height="24"
+            aria-hidden="true"
+          >
+            <path
+              d="M4 7h16M4 12h16M4 17h16"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+            />
+          </svg>
+        </button>
+        <nav id="primary-nav" class="nav" role="navigation">
+          <a href="#features" data-scroll-to>Features</a>
+          <a href="#gallery" data-scroll-to>Gallery</a>
+          <a href="#services" data-scroll-to>Services</a>
+          <a href="#stats" data-scroll-to>Stats</a>
+          <a href="#contact" data-scroll-to>Contact</a>
+        </nav>
+      </div>
+    </header>
+    <!-- Mobile menu backdrop -->
+    <div class="nav-backdrop" data-nav-close></div>
+
+    <!-- Smooth scroll container -->
+    <main data-scroll-container>
+      <!-- HERO -->
+      <section id="hero" class="section hero" data-scroll-section>
+        <div class="container">
+          <div class="hero__content">
+            <h1 class="hero__title" data-scroll data-scroll-speed="1">
+              Create. Edit. Share.
+            </h1>
+            <p
+              class="hero__subtitle"
+              data-scroll
+              data-scroll-delay="0.1"
+              data-scroll-speed="1"
+            >
+              A simple, fast video editor for everyone.
+            </p>
+            <div
+              class="hero__actions"
+              data-scroll
+              data-scroll-delay="0.15"
+              data-scroll-class="is-inview"
+            >
+              <a href="#stats" class="btn btn-primary" data-scroll-to
+                >See Stats</a
+              >
+              <a href="#features" class="btn btn-secondary" data-scroll-to
+                >Explore Features</a
+              >
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- FEATURES -->
+      <section id="features" class="section features" data-scroll-section>
+        <div class="container">
+          <h2 class="section__title" data-scroll data-scroll-class="is-inview">
+            Powerful, yet simple
+          </h2>
+          <p
+            class="section__subtitle"
+            data-scroll
+            data-scroll-class="is-inview"
+          >
+            Everything you need to create stunning videos in minutes.
+          </p>
+
+          <div class="cards">
+            <article class="card" data-scroll data-scroll-class="is-inview">
+              <div class="card__icon">✂️</div>
+              <h3 class="card__title">Trim & Split</h3>
+              <p class="card__desc">
+                Quickly cut, trim, and split clips with frame accuracy.
+              </p>
+            </article>
+            <article
+              class="card"
+              data-scroll
+              data-scroll-class="is-inview"
+              data-scroll-delay="0.1"
+            >
+              <div class="card__icon">🎚️</div>
+              <h3 class="card__title">Color & Audio</h3>
+              <p class="card__desc">
+                Enhance colors, balance audio, and remove noise easily.
+              </p>
+            </article>
+            <article
+              class="card"
+              data-scroll
+              data-scroll-class="is-inview"
+              data-scroll-delay="0.2"
+            >
+              <div class="card__icon">✨</div>
+              <h3 class="card__title">Effects & Titles</h3>
+              <p class="card__desc">
+                Add transitions, overlays, captions, and animated titles.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- GALLERY / PARALLAX -->
+      <section id="gallery" class="section gallery" data-scroll-section>
+        <div class="container">
+          <h2 class="section__title" data-scroll data-scroll-class="is-inview">
+            See it in action
+          </h2>
+          <p
+            class="section__subtitle"
+            data-scroll
+            data-scroll-class="is-inview"
+          >
+            Birthday
+          </p>
+          <div class="samples__row">
+            <div class="sample" data-video="Samples/Sample01.mp4">
+              <video
+                class="sample__video"
+                muted
+                playsinline
+                webkit-playsinline
+                preload="metadata"
+                poster=""
+              >
+                <source src="Samples/Sample01.mp4" type="video/mp4" />
+              </video>
+              <div class="sample__label">Birthday Sample 01</div>
+            </div>
+            <div class="sample" data-video="Samples/Sample02.mp4">
+              <video
+                class="sample__video"
+                muted
+                playsinline
+                webkit-playsinline
+                preload="metadata"
+                poster=""
+              >
+                <source src="Samples/Sample02.mp4" type="video/mp4" />
+              </video>
+              <div class="sample__label">Birthday Sample 02</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- STATS -->
+      <section id="stats" class="section stats" data-scroll-section>
+        <div class="container">
+          <h2 class="section__title" data-scroll data-scroll-class="is-inview">
+            Trusted by creators worldwide
+          </h2>
+          <p
+            class="section__subtitle"
+            data-scroll
+            data-scroll-class="is-inview"
+          >
+            Our work, measured.
+          </p>
+
+          <div
+            class="stats__grid"
+            data-scroll
+            data-scroll-call="stats"
+            data-scroll-repeat="false"
+          >
+            <div class="stat">
+              <div class="stat__number-wrap">
+                <span class="stat__number" data-target="3">0</span>
+              </div>
+              <div class="stat__label">Completed Projects</div>
+            </div>
+            <div class="stat">
+              <div class="stat__number-wrap">
+                <span class="stat__number" data-target="1">0</span>
+              </div>
+              <div class="stat__label">Clients</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SERVICES -->
+      <section id="services" class="section services" data-scroll-section>
+        <div class="container">
+          <div class="services__grid">
+            <div class="services__left">
+              <h2
+                class="section__title"
+                data-scroll
+                data-scroll-class="is-inview"
+              >
+                What I can help with
+              </h2>
+              <ul class="points">
+                <li data-scroll data-scroll-class="is-inview">
+                  <span class="check">✓</span> Frontend website designing &
+                  development
+                </li>
+                <li
+                  data-scroll
+                  data-scroll-class="is-inview"
+                  data-scroll-delay="0.05"
+                >
+                  <span class="check">✓</span> Bug solving
+                </li>
+                <li
+                  data-scroll
+                  data-scroll-class="is-inview"
+                  data-scroll-delay="0.1"
+                >
+                  <span class="check">✓</span> Code structure formatting
+                </li>
+              </ul>
+            </div>
+            <div
+              class="services__right"
+              data-scroll
+              data-scroll-class="is-inview"
+            >
+              <!-- TODO: Replace href with your actual portfolio URL -->
+              <a
+                class="circle-btn circle-btn--photo"
+                href="https://rajlaiya-portfolio.netlify.app/"
+                target="_blank"
+                rel="noopener"
+              >
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- CONTACT -->
+      <section id="contact" class="section contact" data-scroll-section>
+        <div class="container">
+          <h2 class="section__title" data-scroll data-scroll-class="is-inview">
+            Contact for Edit
+          </h2>
+          <p
+            class="section__subtitle"
+            data-scroll
+            data-scroll-class="is-inview"
+          >
+            Reach me on your favorite platform
+          </p>
+
+          <div class="contact__grid">
+            <!-- WhatsApp: prefilled text works without number (user selects contact); replace with your phone to direct message: https://wa.me/1234567890?text=... -->
+            <a
+              class="social circle whatsapp"
+              aria-label="WhatsApp"
+              href="https://wa.me/6355705208?text=can%20you%20edit%20my%20videos%3F"
+              target="_blank"
+              rel="noopener"
+            >
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path
+                  fill="currentColor"
+                  d="M20.52 3.48A11.86 11.86 0 0 0 12.02 0C5.5 0 .25 5.24.25 11.72c0 2.06.54 4.06 1.58 5.84L0 24l6.6-1.72a11.7 11.7 0 0 0 5.4 1.37h.01c6.49 0 11.77-5.24 11.77-11.72 0-3.14-1.24-6.09-3.26-8.19ZM12 21.14h-.01a9.5 9.5 0 0 1-4.85-1.31l-.35-.2-3.92 1.02 1.05-3.82-.23-.39a9.4 9.4 0 0 1-1.45-5.12C2.24 6.45 6.62 2.1 12.02 2.1c2.52 0 4.89.98 6.68 2.76a9.47 9.47 0 0 1 2.78 6.67c0 5.39-4.39 9.62-9.48 9.62Zm5.46-7.18c-.3-.15-1.79-.88-2.06-.98-.28-.1-.48-.15-.69.15-.2.3-.79.98-.96 1.18-.18.2-.36.22-.66.07-.3-.15-1.26-.46-2.4-1.48-.89-.78-1.49-1.75-1.66-2.05-.17-.3 0-.46.13-.61.13-.15.3-.36.45-.54.15-.18.2-.31.3-.51.1-.2.05-.38-.02-.54-.07-.15-.69-1.66-.94-2.28-.25-.61-.5-.52-.69-.53l-.59-.01c-.2 0-.52.07-.79.38-.27.3-1.04 1.02-1.04 2.49 0 1.46 1.07 2.88 1.22 3.08.15.2 2.1 3.2 5.07 4.49.71.31 1.27.5 1.7.64.71.23 1.36.2 1.88.12.58-.09 1.79-.73 2.04-1.43.25-.69.25-1.28.18-1.41-.07-.13-.27-.21-.57-.36Z"
+                />
+              </svg>
+            </a>
+
+            <!-- Instagram: replace USERNAME; message prefill not supported, so we copy text to clipboard on click -->
+            <a
+              class="social circle instagram"
+              aria-label="Instagram"
+              href="https://www.instagram.com/coding_with_rl/"
+              target="_blank"
+              rel="noopener"
+              data-copy-message="can you edit my videos?"
+            >
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path
+                  fill="currentColor"
+                  d="M12 2.2c3.2 0 3.6.01 4.9.07 1.17.05 1.96.24 2.66.5.72.28 1.33.65 1.92 1.24.6.6.97 1.2 1.24 1.92.26.7.45 1.49.5 2.66.06 1.3.07 1.7.07 4.9s-.01 3.6-.07 4.9c-.05 1.17-.24 1.96-.5 2.66-.28.72-.65 1.33-1.24 1.92-.6.6-1.2.97-1.92 1.24-.7.26-1.49.45-2.66.5-1.3.06-1.7.07-4.9.07s-3.6-.01-4.9-.07c-1.17-.05-1.96-.24-2.66-.5-.72-.28-1.33-.65-1.92-1.24-.6-.6-.97-1.2-1.24-1.92-.26-.7-.45-1.49-.5-2.66C2.21 15.6 2.2 15.2 2.2 12s.01-3.6.07-4.9c.05-1.17.24-1.96.5-2.66.28-.72.65-1.33 1.24-1.92.6-.6 1.2-.97 1.92-1.24.7-.26 1.49-.45 2.66-.5C8.4 2.21 8.8 2.2 12 2.2m0-2.2C8.74 0 8.33.01 7.02.07 5.7.13 4.68.34 3.8.67 2.9 1 2.14 1.5 1.38 2.26.62 3.02.12 3.78-.2 4.68c-.33.88-.54 1.9-.6 3.22C-0.01 9.2 0 9.6 0 12s-.01 2.8.07 4.1c.06 1.32.27 2.34.6 3.22.33.9.83 1.66 1.58 2.42.76.76 1.52 1.26 2.42 1.58.88.33 1.9.54 3.22.6C9.2 23.99 9.6 24 12 24s2.8-.01 4.1-.07c1.32-.06 2.34-.27 3.22-.6.9-.33 1.66-.83 2.42-1.58.76-.76 1.26-1.52 1.58-2.42.33-.88.54-1.9.6-3.22.06-1.3.07-1.71.07-4.11s-.01-2.8-.07-4.1c-.06-1.32-.27-2.34-.6-3.22C23.38 2.14 22.88 1.38 22.12.62 21.36-.14 20.6-.64 19.7-.97 18.82-1.3 17.8-1.51 16.48-1.57 15.18-1.63 14.78-1.64 12-1.64Z"
+                />
+                <path
+                  fill="currentColor"
+                  d="M12 5.84A6.16 6.16 0 1 0 18.16 12 6.16 6.16 0 0 0 12 5.84Zm0 10.17A4.01 4.01 0 1 1 16.01 12 4.02 4.02 0 0 1 12 16.01ZM18.4 4.58a1.44 1.44 0 1 0 1.44 1.44 1.44 1.44 0 0 0-1.44-1.44Z"
+                />
+              </svg>
+            </a>
+
+            <!-- LinkedIn: replace YOUR-ID; copy message then open profile -->
+            <a
+              class="social circle linkedin"
+              aria-label="LinkedIn"
+              href="https://www.linkedin.com/in/visual-edit-114033362/"
+              target="_blank"
+              rel="noopener"
+              data-copy-message="can you edit my videos?"
+            >
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path
+                  fill="currentColor"
+                  d="M20.45 20.45h-3.55v-5.6c0-1.34-.02-3.05-1.86-3.05-1.86 0-2.14 1.45-2.14 2.95v5.7H9.35V9h3.4v1.56h.05c.47-.89 1.62-1.83 3.34-1.83 3.58 0 4.24 2.36 4.24 5.42v6.3zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12ZM7.12 20.45H3.56V9h3.56v11.45ZM22.23 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.46c.98 0 1.77-.77 1.77-1.73V1.73C24 .77 23.21 0 22.23 0Z"
+                />
+              </svg>
+            </a>
+          </div>
+
+          <small class="contact__hint"
+            >Tip: For Instagram and LinkedIn, we’ll copy the message to your
+            clipboard and open the app—just paste to send.</small
+          >
+        </div>
+      </section>
+
+      <!-- FOOTER -->
+      <footer class="site-footer" data-scroll-section>
+        <div class="container">
+          <p>© <span id="year"></span> Visual-Edit. All rights reserved.</p>
+        </div>
+      </footer>
+    </main>
+
+    <!-- Video Modal -->
+    <div id="video-modal" class="video-modal" aria-hidden="true" role="dialog">
+      <div class="video-modal__backdrop" data-close-modal></div>
+      <div class="video-modal__dialog" role="document">
+        <button
+          class="video-modal__close"
+          type="button"
+          aria-label="Close"
+          data-close-modal
+        >
+          ×
+        </button>
+        <video
+          id="modal-video"
+          controls
+          playsinline
+          webkit-playsinline
+          src=""
+        ></video>
+      </div>
+    </div>
+
+    <!-- Back to top button -->
+    <a
+      id="to-top"
+      class="to-top"
+      href="#hero"
+      aria-label="Back to top"
+      data-scroll-to
+      >↑</a
+    >
+
+    <!-- Locomotive Scroll JS -->
+    <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.js"></script>
+    <!-- App logic -->
+    <script src="./script.js"></script>
+  </body>
+</html>
