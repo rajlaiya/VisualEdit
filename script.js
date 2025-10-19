@@ -3,6 +3,12 @@
   const scrollContainer = document.querySelector("[data-scroll-container]");
   let countersStarted = false;
   let locoInstance = null;
+  const progressEl = document.getElementById("scroll-progress");
+  function setProgress(p) {
+    if (!progressEl) return;
+    const clamped = Math.min(1, Math.max(0, p || 0));
+    progressEl.style.width = `${(clamped * 100).toFixed(2)}%`;
+  }
 
   function animateCounters() {
     if (countersStarted) return;
@@ -68,28 +74,10 @@
     window.addEventListener("scroll", onScroll, { passive: true });
     onScroll();
 
-    // Smooth theme interpolation based on scroll progress (native)
-    function lerp(a, b, t) {
-      return a + (b - a) * t;
-    }
-    function lerpColorRGB(c1, c2, t) {
-      return `rgb(${Math.round(lerp(c1[0], c2[0], t))}, ${Math.round(
-        lerp(c1[1], c2[1], t)
-      )}, ${Math.round(lerp(c1[2], c2[2], t))})`;
-    }
-    const L_BG = [248, 250, 252],
-      D_BG = [11, 18, 32];
-    const L_FG = [15, 23, 42],
-      D_FG = [229, 231, 235];
-    const L_CARD = [255, 255, 255],
-      D_CARD = [15, 23, 42];
-    const L_MUTED = [71, 85, 105],
-      D_MUTED = [203, 213, 225];
-
-    function getProgressNative() {
-      const scrollTop =
-        window.scrollY || document.documentElement.scrollTop || 0;
-      const docHeight = Math.max(
+    // Progress bar update (native)
+    function updateProgress() {
+      const st = window.scrollY || document.documentElement.scrollTop || 0;
+      const docH = Math.max(
         document.body.scrollHeight,
         document.documentElement.scrollHeight,
         document.body.offsetHeight,
@@ -97,49 +85,16 @@
         document.body.clientHeight,
         document.documentElement.clientHeight
       );
-      const viewport =
-        window.innerHeight || document.documentElement.clientHeight;
-      const max = Math.max(1, docHeight - viewport);
-      return Math.min(1, Math.max(0, scrollTop / max));
+      const vh = window.innerHeight || document.documentElement.clientHeight;
+      const max = Math.max(1, docH - vh);
+      const p = Math.min(1, Math.max(0, st / max));
+      setProgress(p);
     }
-    function applyThemeByProgress(p) {
-      // ease slightly for smoother look
-      const t = 1 - Math.pow(1 - p, 2);
-      const bg = lerpColorRGB(L_BG, D_BG, t);
-      const fg = lerpColorRGB(L_FG, D_FG, t);
-      const card = lerpColorRGB(L_CARD, D_CARD, t);
-      const muted = lerpColorRGB(L_MUTED, D_MUTED, t);
-      // header bg uses transparency; interpolate on underlying rgb and keep alpha similar to light/dark
-      const headerLight = { rgb: L_BG, a: 0.7 };
-      const headerDark = { rgb: [2, 6, 23], a: 0.7 };
-      const hb = [
-        Math.round(lerp(headerLight.rgb[0], headerDark.rgb[0], t)),
-        Math.round(lerp(headerLight.rgb[1], headerDark.rgb[1], t)),
-        Math.round(lerp(headerLight.rgb[2], headerDark.rgb[2], t)),
-      ];
-      const headerBg = `rgba(${hb[0]}, ${hb[1]}, ${hb[2]}, ${lerp(
-        headerLight.a,
-        headerDark.a,
-        t
-      ).toFixed(2)})`;
-      const headerBorder = `rgba(${Math.round(lerp(2, 255, t))}, ${Math.round(
-        lerp(6, 255, t)
-      )}, ${Math.round(lerp(23, 255, t))}, ${lerp(0.06, 0.06, t).toFixed(2)})`;
+    window.addEventListener("scroll", updateProgress, { passive: true });
+    window.addEventListener("resize", updateProgress);
+    updateProgress();
 
-      const s = document.body.style;
-      s.setProperty("--bg", bg);
-      s.setProperty("--fg", fg);
-      s.setProperty("--card", card);
-      s.setProperty("--muted", muted);
-      s.setProperty("--header-bg", headerBg);
-      s.setProperty("--header-border", headerBorder);
-    }
-    function updateThemeNative() {
-      applyThemeByProgress(getProgressNative());
-    }
-    window.addEventListener("scroll", updateThemeNative, { passive: true });
-    window.addEventListener("resize", updateThemeNative);
-    updateThemeNative();
+    // Theme interpolation removed: keep site in consistent dark theme (CSS handles defaults)
   } else {
     const scroll = new window.LocomotiveScroll({
       el: scrollContainer,
@@ -185,72 +140,33 @@
 
     // Back to top visibility via Locomotive Scroll
     const toTop = document.getElementById("to-top");
-    // Smooth theme interpolation using Locomotive scroll progress
-    function lerp(a, b, t) {
-      return a + (b - a) * t;
-    }
-    function lerpColorRGB(c1, c2, t) {
-      return `rgb(${Math.round(lerp(c1[0], c2[0], t))}, ${Math.round(
-        lerp(c1[1], c2[1], t)
-      )}, ${Math.round(lerp(c1[2], c2[2], t))})`;
-    }
-    const L_BG = [248, 250, 252],
-      D_BG = [11, 18, 32];
-    const L_FG = [15, 23, 42],
-      D_FG = [229, 231, 235];
-    const L_CARD = [255, 255, 255],
-      D_CARD = [15, 23, 42];
-    const L_MUTED = [71, 85, 105],
-      D_MUTED = [203, 213, 225];
-    function applyThemeByProgress(p) {
-      const t = 1 - Math.pow(1 - p, 2);
-      const bg = lerpColorRGB(L_BG, D_BG, t);
-      const fg = lerpColorRGB(L_FG, D_FG, t);
-      const card = lerpColorRGB(L_CARD, D_CARD, t);
-      const muted = lerpColorRGB(L_MUTED, D_MUTED, t);
-      const headerLight = { rgb: L_BG, a: 0.7 };
-      const headerDark = { rgb: [2, 6, 23], a: 0.7 };
-      const hb = [
-        Math.round(lerp(headerLight.rgb[0], headerDark.rgb[0], t)),
-        Math.round(lerp(headerLight.rgb[1], headerDark.rgb[1], t)),
-        Math.round(lerp(headerLight.rgb[2], headerDark.rgb[2], t)),
-      ];
-      const headerBg = `rgba(${hb[0]}, ${hb[1]}, ${hb[2]}, ${lerp(
-        headerLight.a,
-        headerDark.a,
-        t
-      ).toFixed(2)})`;
-      const headerBorder = `rgba(${Math.round(lerp(2, 255, t))}, ${Math.round(
-        lerp(6, 255, t)
-      )}, ${Math.round(lerp(23, 255, t))}, ${lerp(0.06, 0.06, t).toFixed(2)})`;
-      const s = document.body.style;
-      s.setProperty("--bg", bg);
-      s.setProperty("--fg", fg);
-      s.setProperty("--card", card);
-      s.setProperty("--muted", muted);
-      s.setProperty("--header-bg", headerBg);
-      s.setProperty("--header-border", headerBorder);
-    }
-    function getProgressLoco(args) {
+    function updateProgressFromLoco(args) {
       const y =
         args.scroll && typeof args.scroll.y === "number" ? args.scroll.y : 0;
+      if (toTop) toTop.classList.toggle("is-visible", y > 400);
       const limit =
         args.limit && typeof args.limit.y === "number"
           ? args.limit.y
           : scroll.el.scrollHeight - scroll.el.clientHeight;
       const max = Math.max(1, limit);
-      return Math.min(1, Math.max(0, y / max));
+      const p = Math.min(1, Math.max(0, y / max));
+      setProgress(p);
     }
-    scroll.on("scroll", (args) => {
-      const y =
-        args.scroll && typeof args.scroll.y === "number" ? args.scroll.y : 0;
-      if (toTop) toTop.classList.toggle("is-visible", y > 400);
-      applyThemeByProgress(getProgressLoco(args));
-    });
+    scroll.on("scroll", updateProgressFromLoco);
     // initial
     if (toTop) toTop.classList.remove("is-visible");
-    // set starting theme
-    applyThemeByProgress(0);
+    // Initialize progress at current position (0 on first paint)
+    try {
+      setProgress(0);
+      // After locomotive computes limits, set again
+      setTimeout(() => {
+        updateProgressFromLoco({
+          scroll: { y: 0 },
+          limit: { y: scroll.el.scrollHeight - scroll.el.clientHeight },
+        });
+      }, 50);
+    } catch (_) {}
+    // Theme interpolation removed: dark theme is static via CSS variables
 
     // Optional: reveal classes already managed via data-scroll-class="is-inview"
   }
@@ -282,6 +198,37 @@
         openVideoModal(card.getAttribute("data-video") || "")
       );
     });
+  }
+
+  // Posters: click to open image modal
+  function bindPosters() {
+    const posters = document.querySelectorAll(".poster");
+    if (!posters.length) return;
+    posters.forEach((p) => {
+      const imgEl = p.querySelector(".poster__img");
+      const src = p.getAttribute("data-image") || (imgEl ? imgEl.src : "");
+      p.addEventListener("click", () => openImageModal(src));
+    });
+  }
+
+  function openImageModal(src) {
+    const modal = document.getElementById("image-modal");
+    const mi = document.getElementById("modal-image");
+    if (!modal || !mi) return;
+    if (locoInstance) locoInstance.stop();
+    document.body.style.overflow = "hidden";
+    mi.src = src;
+    modal.classList.add("is-open");
+  }
+
+  function closeImageModal() {
+    const modal = document.getElementById("image-modal");
+    const mi = document.getElementById("modal-image");
+    if (!modal || !mi) return;
+    modal.classList.remove("is-open");
+    mi.removeAttribute("src");
+    document.body.style.overflow = "";
+    if (locoInstance) locoInstance.start();
   }
 
   function openVideoModal(src) {
@@ -316,11 +263,21 @@
       el.addEventListener("click", closeVideoModal);
     });
     document.addEventListener("keydown", (e) => {
-      if (e.key === "Escape") closeVideoModal();
+      if (e.key === "Escape") {
+        closeVideoModal();
+        closeImageModal();
+      }
     });
+    // Image modal close bindings
+    document
+      .querySelectorAll("[data-close-image-modal]")
+      .forEach((el) => el.addEventListener("click", closeImageModal));
+    const imageBackdrop = document.querySelector(".image-modal__backdrop");
+    if (imageBackdrop) imageBackdrop.addEventListener("click", closeImageModal);
   }
 
   bindSamples();
+  bindPosters();
   bindModalClose();
 
   // Mobile navigation toggle

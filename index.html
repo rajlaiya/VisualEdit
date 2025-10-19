@@ -53,10 +53,30 @@
       href="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.css"
     />
 
+    <!-- Google Fonts: Poppins for stylish headings -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@700;800&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Google Fonts: Pacifico 400 for selected section titles -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Google Fonts: Delius Swash Caps 400 for subtitles -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Delius+Swash+Caps&display=swap"
+      rel="stylesheet"
+    />
+
     <!-- App styles -->
     <link rel="stylesheet" href="./styles.css" />
   </head>
   <body>
+    <!-- Scroll progress bar -->
+    <div id="scroll-progress" class="scroll-progress" aria-hidden="true"></div>
     <!-- Header / Nav (outside the scroll container so it stays fixed) -->
     <header class="site-header">
       <div class="container">
@@ -127,6 +147,12 @@
             </div>
           </div>
         </div>
+        <!-- Decorative bubbles -->
+        <div class="decor" aria-hidden="true">
+          <span class="bubble bubble--1"></span>
+          <span class="bubble bubble--2"></span>
+          <span class="bubble bubble--3"></span>
+        </div>
       </section>
 
       <!-- FEATURES -->
@@ -190,7 +216,7 @@
             data-scroll
             data-scroll-class="is-inview"
           >
-            Birthday
+            Reels of recent edits.
           </p>
           <div class="samples__row">
             <div class="sample" data-video="Samples/Sample01.mp4">
@@ -218,6 +244,72 @@
                 <source src="Samples/Sample02.mp4" type="video/mp4" />
               </video>
               <div class="sample__label">Birthday Sample 02</div>
+            </div>
+            <div class="sample" data-video="Samples/Sample 03.mp4">
+              <video
+                class="sample__video"
+                muted
+                playsinline
+                webkit-playsinline
+                preload="metadata"
+                poster=""
+              >
+                <source src="Samples/Sample 03.mp4" type="video/mp4" />
+              </video>
+              <div class="sample__label">Sample 03</div>
+            </div>
+            <div class="sample" data-video="Samples/Sample 04.mp4">
+              <video
+                class="sample__video"
+                muted
+                playsinline
+                webkit-playsinline
+                preload="metadata"
+                poster=""
+              >
+                <source src="Samples/Sample 04.mp4" type="video/mp4" />
+              </video>
+              <div class="sample__label">Sample 04</div>
+            </div>
+          </div>
+
+          <p
+            class="section__subtitle"
+            data-scroll
+            data-scroll-class="is-inview"
+            data-scroll-delay="0.05"
+          >
+            Poster Making
+          </p>
+          <div class="posters__row">
+            <div
+              class="poster"
+              data-image="images/img1.jpeg"
+              data-scroll
+              data-scroll-class="is-inview"
+            >
+              <img
+                class="poster__img"
+                src="images/img1.jpeg"
+                alt="Poster demo 1"
+                loading="lazy"
+              />
+              <div class="poster__label">Poster 01</div>
+            </div>
+            <div
+              class="poster"
+              data-image="images/img2.jpg"
+              data-scroll
+              data-scroll-class="is-inview"
+              data-scroll-delay="0.05"
+            >
+              <img
+                class="poster__img"
+                src="images/img2.jpg"
+                alt="Poster demo 2"
+                loading="lazy"
+              />
+              <div class="poster__label">Poster 02</div>
             </div>
           </div>
         </div>
@@ -414,6 +506,22 @@
           webkit-playsinline
           src=""
         ></video>
+      </div>
+    </div>
+
+    <!-- Image Modal -->
+    <div id="image-modal" class="image-modal" aria-hidden="true" role="dialog">
+      <div class="image-modal__backdrop" data-close-image-modal></div>
+      <div class="image-modal__dialog" role="document">
+        <button
+          class="image-modal__close"
+          type="button"
+          aria-label="Close"
+          data-close-image-modal
+        >
+          ×
+        </button>
+        <img id="modal-image" alt="Poster preview" src="" />
       </div>
     </div>
 
