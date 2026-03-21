@@ -182,7 +182,8 @@ body.nav-open .nav-backdrop { opacity: 1; pointer-events: auto; }
 #offerings .section__title,
 #contact .section__title,
 #stats .section__title,
-#services .section__title {
+#services .section__title,
+#shop .section__title {
   font-family: var(--heading-font-decorative);
   font-weight: 400;
   letter-spacing: 0.5px;
@@ -283,6 +284,171 @@ body.nav-open .nav-backdrop { opacity: 1; pointer-events: auto; }
 
 @media (max-width: 640px) {
   .posters__row { grid-template-columns: repeat(2, minmax(130px, 1fr)); }
+}
+
+/* Shop / Combo Offers Section */
+.shop {
+  background: linear-gradient(135deg, rgba(109, 40, 217, 0.08), rgba(14, 165, 233, 0.08));
+}
+
+.combo__grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 32px;
+  margin-top: 48px;
+}
+
+.combo {
+  position: relative;
+  height: 100%;
+}
+
+.combo__content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  background: var(--card);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  transition: transform 400ms ease, box-shadow 400ms ease;
+  opacity: 0;
+  transform: translateX(-100px);
+}
+
+/* Slide-in animation for left and right alternating posters */
+.combo:nth-child(odd) .combo__content {
+  animation: slideInLeft 700ms ease forwards;
+}
+
+.combo:nth-child(even) .combo__content {
+  animation: slideInRight 700ms ease forwards;
+  animation-delay: 0.1s;
+}
+
+.combo:hover .combo__content {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 40px rgba(2, 6, 23, 0.2);
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-100px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(100px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.combo__image {
+  overflow: hidden;
+  border-radius: 12px;
+  aspect-ratio: 1 / 1;
+}
+
+.combo__image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 400ms ease;
+}
+
+.combo:hover .combo__image img {
+  transform: scale(1.08);
+}
+
+.combo__info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 24px;
+}
+
+.combo__title {
+  font-size: 24px;
+  font-weight: 700;
+  margin: 0 0 12px 0;
+  color: #ffffff;
+  font-family: var(--heading-font);
+}
+
+.combo__description {
+  font-size: 14px;
+  color: var(--muted);
+  margin: 0 0 20px 0;
+  line-height: 1.6;
+}
+
+.combo__price {
+  font-size: 32px;
+  font-weight: 800;
+  color: var(--primary);
+  margin: 16px 0 20px 0;
+}
+
+.combo__info .btn {
+  align-self: flex-start;
+}
+
+/* Responsive - Stack combo offers on smaller screens */
+@media (max-width: 960px) {
+  .combo__grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .combo__content {
+    grid-template-columns: 1fr;
+  }
+
+  .combo:nth-child(even) .combo__content {
+    animation: slideInLeft 700ms ease forwards;
+    animation-delay: 0.05s;
+  }
+
+  .combo__image {
+    aspect-ratio: 16 / 9;
+  }
+}
+
+@media (max-width: 640px) {
+  .combo__grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+    margin-top: 32px;
+  }
+
+  .combo__content {
+    grid-template-columns: 1fr;
+    border-radius: 12px;
+  }
+
+  .combo__info {
+    padding: 16px;
+  }
+
+  .combo__title {
+    font-size: 20px;
+  }
+
+  .combo__price {
+    font-size: 24px;
+  }
 }
 
 /* Video modal */
