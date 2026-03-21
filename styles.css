@@ -6,6 +6,13 @@ body {
   font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
   color: var(--fg, #e5e7eb); /* dynamic text color */
   background: var(--bg, #0b1220); /* dynamic background */
+  /* Privacy: Disable text selection and copying */
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+  -webkit-touch-callout: none;
+  /* Prevent screenshot overlay */
+  pointer-events: auto;
 }
 
 :root {
@@ -144,6 +151,10 @@ body.nav-open .nav-backdrop { opacity: 1; pointer-events: auto; }
   font-weight: 600;
   border-radius: 10px;
   text-decoration: none;
+  /* Allow buttons to be functional */
+  -webkit-user-select: auto;
+  -moz-user-select: auto;
+  user-select: auto;
 }
 .btn-primary { background: var(--primary); color: white; }
 .btn-primary:hover { background: var(--primary-600); }

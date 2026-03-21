@@ -321,4 +321,79 @@
       if (e.key === "Escape") closeNav();
     });
   })();
+
+  // Privacy Features: Disable right-click, inspect menu, copy, and screenshots
+  (function initPrivacyFeatures() {
+    // Disable right-click context menu
+    document.addEventListener("contextmenu", (e) => {
+      e.preventDefault();
+      return false;
+    });
+
+    // Disable text selection and copying
+    document.addEventListener("selectstart", (e) => {
+      e.preventDefault();
+      return false;
+    });
+    document.addEventListener("copy", (e) => {
+      e.preventDefault();
+      return false;
+    });
+
+    // Disable keyboard shortcuts for developer tools and inspect
+    document.addEventListener("keydown", (e) => {
+      // F12 - Developer Tools
+      if (e.key === "F12") {
+        e.preventDefault();
+        return false;
+      }
+      // Ctrl+Shift+I - Inspect Element
+      if (e.ctrlKey && e.shiftKey && e.key === "I") {
+        e.preventDefault();
+        return false;
+      }
+      // Ctrl+Shift+J - Console
+      if (e.ctrlKey && e.shiftKey && e.key === "J") {
+        e.preventDefault();
+        return false;
+      }
+      // Ctrl+Shift+C - Element Inspector
+      if (e.ctrlKey && e.shiftKey && e.key === "C") {
+        e.preventDefault();
+        return false;
+      }
+      // Ctrl+Shift+K - Console (Firefox)
+      if (e.ctrlKey && e.shiftKey && e.key === "K") {
+        e.preventDefault();
+        return false;
+      }
+      // Ctrl+C - Copy (additional protection)
+      if ((e.ctrlKey || e.metaKey) && e.key === "c") {
+        e.preventDefault();
+        return false;
+      }
+    });
+
+    // Disable dragging
+    document.addEventListener("dragstart", (e) => {
+      e.preventDefault();
+      return false;
+    });
+
+    // Disable screenshot via PrintScreen
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "PrintScreen") {
+        e.preventDefault();
+        return false;
+      }
+    });
+
+    // Disable mouse right-click and element inspection
+    document.addEventListener("mousedown", (e) => {
+      if (e.button === 2) {
+        e.preventDefault();
+        return false;
+      }
+    });
+  })();
 })();
