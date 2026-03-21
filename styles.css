@@ -393,6 +393,19 @@ body.nav-open .nav-backdrop { opacity: 1; pointer-events: auto; }
   transform: scale(1.08);
 }
 
+/* Clickable combo images */
+.combo__image--clickable {
+  cursor: zoom-in;
+}
+
+.combo__image--clickable img {
+  transition: transform 400ms ease, filter 300ms ease;
+}
+
+.combo__image--clickable:hover img {
+  filter: brightness(1.1);
+}
+
 .combo__info {
   display: flex;
   flex-direction: column;

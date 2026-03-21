@@ -33,7 +33,7 @@
   // Guard when CDN fails or element missing
   if (!scrollContainer || typeof window.LocomotiveScroll === "undefined") {
     console.warn(
-      "LocomotiveScroll not available or container missing. Falling back to native behavior."
+      "LocomotiveScroll not available or container missing. Falling back to native behavior.",
     );
     // Native anchor smooth scroll as a minimal fallback
     document.querySelectorAll("[data-scroll-to]").forEach((a) => {
@@ -61,7 +61,7 @@
             }
           });
         },
-        { root: null, rootMargin: "0px", threshold: 0.3 }
+        { root: null, rootMargin: "0px", threshold: 0.3 },
       );
       io.observe(statsGrid);
     }
@@ -83,7 +83,7 @@
         document.body.offsetHeight,
         document.documentElement.offsetHeight,
         document.body.clientHeight,
-        document.documentElement.clientHeight
+        document.documentElement.clientHeight,
       );
       const vh = window.innerHeight || document.documentElement.clientHeight;
       const max = Math.max(1, docH - vh);
@@ -195,7 +195,7 @@
       });
       // Click to open modal
       card.addEventListener("click", () =>
-        openVideoModal(card.getAttribute("data-video") || "")
+        openVideoModal(card.getAttribute("data-video") || ""),
       );
     });
   }
@@ -208,6 +208,16 @@
       const imgEl = p.querySelector(".poster__img");
       const src = p.getAttribute("data-image") || (imgEl ? imgEl.src : "");
       p.addEventListener("click", () => openImageModal(src));
+    });
+  }
+
+  // Combo Images: click to open image modal
+  function bindComboImages() {
+    const comboImages = document.querySelectorAll(".combo__image--clickable");
+    if (!comboImages.length) return;
+    comboImages.forEach((img) => {
+      const src = img.getAttribute("data-image");
+      img.addEventListener("click", () => openImageModal(src));
     });
   }
 
@@ -278,6 +288,7 @@
 
   bindSamples();
   bindPosters();
+  bindComboImages();
   bindModalClose();
 
   // Mobile navigation toggle
