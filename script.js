@@ -286,10 +286,36 @@
     if (imageBackdrop) imageBackdrop.addEventListener("click", closeImageModal);
   }
 
+  function bindComboSwitcher() {
+    const switchButtons = document.querySelectorAll("[data-combo-switch]");
+    const pages = document.querySelectorAll("[data-combo-page]");
+    if (!switchButtons.length || !pages.length) return;
+
+    switchButtons.forEach((btn) => {
+      btn.addEventListener("click", () => {
+        const target = btn.getAttribute("data-combo-switch");
+
+        switchButtons.forEach((item) => {
+          item.classList.toggle("is-active", item === btn);
+        });
+
+        pages.forEach((page) => {
+          const isMatch = page.getAttribute("data-combo-page") === target;
+          page.classList.toggle("is-active", isMatch);
+        });
+
+        if (locoInstance) {
+          setTimeout(() => locoInstance.update(), 120);
+        }
+      });
+    });
+  }
+
   bindSamples();
   bindPosters();
   bindComboImages();
   bindModalClose();
+  bindComboSwitcher();
 
   // Mobile navigation toggle
   (function bindMobileNav() {

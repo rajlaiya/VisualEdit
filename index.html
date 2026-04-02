@@ -110,6 +110,7 @@
           <a href="#shop" data-scroll-to>Shop</a>
           <a href="#stats" data-scroll-to>Stats</a>
           <a href="#services" data-scroll-to>Services</a>
+          <a href="#faq" data-scroll-to>FAQ</a>
           <a href="#contact" data-scroll-to>Contact</a>
         </nav>
       </div>
@@ -416,7 +417,25 @@
           >
             Exclusive combo packages for your projects.
           </p>
-          <div class="combo__grid">
+          <div class="combo__switch" aria-label="Select combo offers page">
+            <button
+              type="button"
+              class="combo__switch-btn is-active"
+              data-combo-switch="1"
+              aria-label="Show combo offers 1"
+            >
+              1
+            </button>
+            <button
+              type="button"
+              class="combo__switch-btn"
+              data-combo-switch="2"
+              aria-label="Show combo offers 2"
+            >
+              2
+            </button>
+          </div>
+          <div class="combo__grid is-active" data-combo-page="1">
             <div class="combo" data-scroll data-scroll-class="is-inview">
               <div class="combo__content">
                 <div
@@ -434,7 +453,7 @@
                   <p class="combo__description">
                     Complete video editing + poster design
                   </p>
-                  <div class="combo__price">Only 350</div>
+                  <div class="combo__price">Only 550</div>
                   <a
                     href="https://wa.me/6355705208?text=I%20am%20interested%20in%20ULTIMATE%20EDITING%20COMBO%20offer"
                     target="_blank"
@@ -470,9 +489,67 @@
                     Frontend website designing & development Data + bug solving
                     Data and interview helper
                   </p>
-                  <div class="combo__price">Only450</div>
+                  <div class="combo__price">Only 999</div>
                   <a
                     href="https://wa.me/6355705208?text=I%20am%20interested%20in%20THE%20COMPLETE%20PACKAGE%20OF%20WEB%20DEVELOPMENT%20offer"
+                    target="_blank"
+                    rel="noopener"
+                    class="btn btn-primary"
+                    >Get Offer</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="combo__grid" data-combo-page="2">
+            <div class="combo">
+              <div class="combo__content">
+                <div
+                  class="combo__image combo__image--clickable"
+                  data-image="images/img1.jpeg"
+                >
+                  <img
+                    src="images/img1.jpeg"
+                    alt="Combo Offer 3"
+                    loading="lazy"
+                  />
+                </div>
+                <div class="combo__info">
+                  <h3 class="combo__title">CONTENT CREATOR STARTER PACK</h3>
+                  <p class="combo__description">
+                    2 short video edits + 2 custom posters + simple revisions
+                  </p>
+                  <div class="combo__price">Only 699</div>
+                  <a
+                    href="https://wa.me/6355705208?text=I%20am%20interested%20in%20CONTENT%20CREATOR%20STARTER%20PACK%20offer"
+                    target="_blank"
+                    rel="noopener"
+                    class="btn btn-primary"
+                    >Get Offer</a
+                  >
+                </div>
+              </div>
+            </div>
+            <div class="combo">
+              <div class="combo__content">
+                <div
+                  class="combo__image combo__image--clickable"
+                  data-image="images/img2.jpg"
+                >
+                  <img
+                    src="images/img2.jpg"
+                    alt="Combo Offer 4"
+                    loading="lazy"
+                  />
+                </div>
+                <div class="combo__info">
+                  <h3 class="combo__title">BRAND GROWTH COMBO</h3>
+                  <p class="combo__description">
+                    Social post design + promo reel edit + profile setup support
+                  </p>
+                  <div class="combo__price">Only 1199</div>
+                  <a
+                    href="https://wa.me/6355705208?text=I%20am%20interested%20in%20BRAND%20GROWTH%20COMBO%20offer"
                     target="_blank"
                     rel="noopener"
                     class="btn btn-primary"
@@ -582,6 +659,107 @@
             <span class="marquee__item">the remote editing service</span>
             <span class="marquee__item">the remote editing service</span>
             <span class="marquee__item">the remote editing service</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- FAQ -->
+      <section id="faq" class="section faq" data-scroll-section>
+        <div class="container">
+          <h2 class="section__title" data-scroll data-scroll-class="is-inview">
+            Frequently Asked Questions
+          </h2>
+          <p
+            class="section__subtitle"
+            data-scroll
+            data-scroll-class="is-inview"
+          >
+            Charges, document edits, packs, and delivery details.
+          </p>
+
+          <div class="faq__list">
+            <details
+              class="faq__item"
+              data-scroll
+              data-scroll-class="is-inview"
+              open
+            >
+              <summary class="faq__question">
+                60 aur 90 second basic reel edit ka kya charge hai?
+              </summary>
+              <p class="faq__answer">60 sec: 250, 90 sec: 400.</p>
+            </details>
+
+            <details
+              class="faq__item"
+              data-scroll
+              data-scroll-class="is-inview"
+              data-scroll-delay="0.03"
+            >
+              <summary class="faq__question">
+                Kis type ke document edit hote hain?
+              </summary>
+              <p class="faq__answer">
+                PDF order arranging, PDF merge, PDF converting, resume edit,
+                cover letter edit, aur slide edit. Sirf unethical ya government
+                documents edit nahi hote, jaise PAN card, Aadhaar, ration card,
+                ya kisi bhi tarah ka ID proof.
+              </p>
+            </details>
+
+            <details
+              class="faq__item"
+              data-scroll
+              data-scroll-class="is-inview"
+              data-scroll-delay="0.06"
+            >
+              <summary class="faq__question">
+                Editing pack me kitna data include hoga, lifetime access rahega,
+                aur future me data add hoga?
+              </summary>
+              <p class="faq__answer">
+                Basic developer CapCut me jo tools use karta hai, wo sab include
+                hota hai. Iske saath different BGMs aur direct website access ki
+                BAT files bhi milti hain. Future me naya data add hota hai to
+                WhatsApp par update de diya jata hai. Access abhi lifetime hai,
+                lekin safety ke liye aapko suggest kiya jata hai ki sara data
+                download karke backup rakh lo, taki link change ya technical
+                issue me koi dikkat na ho.
+              </p>
+            </details>
+
+            <details
+              class="faq__item"
+              data-scroll
+              data-scroll-class="is-inview"
+              data-scroll-delay="0.09"
+            >
+              <summary class="faq__question">
+                Delivery time kitna hota hai aur urgent work lete ho?
+              </summary>
+              <p class="faq__answer">
+                Normal edits usually 24-48 hours me deliver ho jate hain. Urgent
+                delivery available hai, lekin timeline aur extra charge project
+                complexity par depend karta hai.
+              </p>
+            </details>
+
+            <details
+              class="faq__item"
+              data-scroll
+              data-scroll-class="is-inview"
+              data-scroll-delay="0.12"
+            >
+              <summary class="faq__question">
+                Revisions kitni milti hain aur final files kis format me
+                milengi?
+              </summary>
+              <p class="faq__answer">
+                Har project me basic revisions included hoti hain taaki output
+                aapki requirement ke hisab se perfect ho. Final files generally
+                MP4/PDF/PPT format me share ki jati hain, as per project type.
+              </p>
+            </details>
           </div>
         </div>
       </section>
