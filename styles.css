@@ -377,8 +377,8 @@ body.nav-open .nav-backdrop { opacity: 1; pointer-events: auto; }
 
 .combo__content {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 24px;
+  grid-template-columns: 1fr;
+  gap: 0;
   background: var(--card);
   border: 1px solid rgba(255, 255, 255, 0.06);
   border-radius: 16px;
@@ -428,20 +428,15 @@ body.nav-open .nav-backdrop { opacity: 1; pointer-events: auto; }
 
 .combo__image {
   overflow: hidden;
-  border-radius: 12px;
-  aspect-ratio: 1 / 1;
+  aspect-ratio: auto;
 }
 
 .combo__image img {
   width: 100%;
-  height: 100%;
-  object-fit: cover;
+  height: auto;
+  object-fit: contain;
   display: block;
-  transition: transform 400ms ease;
-}
-
-.combo:hover .combo__image img {
-  transform: scale(1.08);
+  transition: filter 300ms ease;
 }
 
 /* Clickable combo images */
@@ -450,7 +445,7 @@ body.nav-open .nav-backdrop { opacity: 1; pointer-events: auto; }
 }
 
 .combo__image--clickable img {
-  transition: transform 400ms ease, filter 300ms ease;
+  transition: filter 300ms ease;
 }
 
 .combo__image--clickable:hover img {
@@ -486,6 +481,27 @@ body.nav-open .nav-backdrop { opacity: 1; pointer-events: auto; }
   margin: 16px 0 20px 0;
 }
 
+.combo__coupon {
+  margin: 6px 0 0 0;
+  font-size: 14px;
+  color: #fef08a;
+  font-weight: 600;
+}
+
+.combo__coupon strong {
+  color: #fde047;
+  letter-spacing: 0.4px;
+}
+
+.combo__note {
+  margin: 22px auto 0;
+  max-width: 860px;
+  text-align: center;
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.7;
+}
+
 .combo__info .btn {
   align-self: flex-start;
 }
@@ -506,9 +522,6 @@ body.nav-open .nav-backdrop { opacity: 1; pointer-events: auto; }
     animation-delay: 0.05s;
   }
 
-  .combo__image {
-    aspect-ratio: 16 / 9;
-  }
 }
 
 @media (max-width: 640px) {
@@ -537,6 +550,11 @@ body.nav-open .nav-backdrop { opacity: 1; pointer-events: auto; }
 
   .combo__price {
     font-size: 24px;
+  }
+
+  .combo__note {
+    font-size: 13px;
+    margin-top: 18px;
   }
 }
 
