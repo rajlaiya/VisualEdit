@@ -311,11 +311,41 @@
     });
   }
 
+  async function loadHtmlIncludes() {
+    const targets = Array.from(document.querySelectorAll("[data-include]"));
+    if (!targets.length) return;
+
+    await Promise.all(
+      targets.map(async (target) => {
+        const url = target.getAttribute("data-include");
+        if (!url) return;
+
+        try {
+          const response = await fetch(url);
+          if (!response.ok) {
+            throw new Error(`Failed to load include: ${url}`);
+          }
+          const html = await response.text();
+          target.outerHTML = html;
+        } catch (error) {
+          console.warn("Could not load HTML include", url, error);
+        }
+      }),
+    );
+  }
+
   bindSamples();
   bindPosters();
   bindComboImages();
   bindModalClose();
   bindComboSwitcher();
+
+  loadHtmlIncludes().then(() => {
+    // Re-bind handlers for dynamically injected sections.
+    bindComboImages();
+    bindComboSwitcher();
+    if (locoInstance) locoInstance.update();
+  });
 
   // Mobile navigation toggle
   (function bindMobileNav() {
