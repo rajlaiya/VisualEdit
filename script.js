@@ -1,4 +1,4 @@
-// VisualEdit Studio - Interactive Logic & Form Handling
+// VisualEdit Studio - Interactive Logic & Studio Brief Handling
 (function () {
   const scrollContainer = document.querySelector("[data-scroll-container]");
   let countersStarted = false;
@@ -15,7 +15,7 @@
   function animateCounters() {
     if (countersStarted) return;
     countersStarted = true;
-    const duration = 1600; // ms
+    const duration = 1600;
     const easeOutCubic = (t) => 1 - Math.pow(1 - t, 3);
     document.querySelectorAll(".stat__number").forEach((el) => {
       const target = parseInt(el.getAttribute("data-target") || "0", 10);
@@ -32,7 +32,7 @@
     });
   }
 
-  // Smooth scroll handler for both Locomotive and Native
+  // Smooth scroll handler
   function smoothScrollTo(targetSelector) {
     const target = document.querySelector(targetSelector);
     if (!target) return;
@@ -48,11 +48,10 @@
     }
   }
 
-  // Locomotive Scroll Initialization / Fallback
+  // Scroll initialization
   if (!scrollContainer || typeof window.LocomotiveScroll === "undefined") {
     console.info("Using Native Scroll Engine.");
-    
-    // Native anchor links
+
     document.querySelectorAll("[data-scroll-to]").forEach((a) => {
       a.addEventListener("click", (e) => {
         const href = a.getAttribute("href");
@@ -63,7 +62,6 @@
       });
     });
 
-    // Native IntersectionObserver for stats counter
     const statsGrid = document.querySelector(".stats__grid");
     if (statsGrid && "IntersectionObserver" in window) {
       const io = new IntersectionObserver(
@@ -80,7 +78,6 @@
       io.observe(statsGrid);
     }
 
-    // Back to top visibility on native scroll
     const toTop = document.getElementById("to-top");
     const onScroll = () => {
       const y = window.scrollY || document.documentElement.scrollTop;
@@ -89,7 +86,6 @@
     window.addEventListener("scroll", onScroll, { passive: true });
     onScroll();
 
-    // Progress bar update
     function updateProgress() {
       const st = window.scrollY || document.documentElement.scrollTop || 0;
       const docH = Math.max(
@@ -120,7 +116,6 @@
     });
     locoInstance = scroll;
 
-    // Handle anchor clicks
     document.querySelectorAll("[data-scroll-to]").forEach((a) => {
       a.addEventListener("click", (e) => {
         const href = a.getAttribute("href");
@@ -131,7 +126,6 @@
       });
     });
 
-    // Trigger counters via Locomotive Scroll call
     scroll.on("call", (func, direction) => {
       if (func === "stats" && direction === "enter") {
         animateCounters();
@@ -143,7 +137,6 @@
     window.addEventListener("load", () => scroll.update());
     window.addEventListener("resize", () => scroll.update());
 
-    // Update scroll calculations once all images finish loading
     document.querySelectorAll("img").forEach((img) => {
       if (img.complete) {
         scroll.update();
@@ -211,14 +204,6 @@
       const imgEl = p.querySelector(".poster__img");
       const src = p.getAttribute("data-image") || (imgEl ? imgEl.src : "");
       p.addEventListener("click", () => openImageModal(src));
-    });
-  }
-
-  // Combo Images Click to Zoom Modal
-  function bindComboImages() {
-    document.querySelectorAll(".combo__image--clickable").forEach((img) => {
-      const src = img.getAttribute("data-image");
-      img.addEventListener("click", () => openImageModal(src));
     });
   }
 
@@ -309,46 +294,6 @@
     toastCloseBtn.addEventListener("click", closeToast);
   }
 
-  // Combo Packages Category Switcher
-  function bindComboSwitcher() {
-    const switchButtons = document.querySelectorAll("[data-combo-switch]");
-    const pages = document.querySelectorAll("[data-combo-page]");
-    if (!switchButtons.length || !pages.length) return;
-
-    switchButtons.forEach((btn) => {
-      btn.addEventListener("click", () => {
-        const target = btn.getAttribute("data-combo-switch");
-        switchButtons.forEach((item) => item.classList.toggle("is-active", item === btn));
-        pages.forEach((page) => {
-          const isMatch = page.getAttribute("data-combo-page") === target;
-          page.classList.toggle("is-active", isMatch);
-        });
-        if (locoInstance) setTimeout(() => locoInstance.update(), 120);
-      });
-    });
-  }
-
-  // Dynamic HTML Include Loader (for shop-section.html)
-  async function loadHtmlIncludes() {
-    const targets = Array.from(document.querySelectorAll("[data-include]"));
-    if (!targets.length) return;
-
-    await Promise.all(
-      targets.map(async (target) => {
-        const url = target.getAttribute("data-include");
-        if (!url) return;
-        try {
-          const response = await fetch(url);
-          if (!response.ok) throw new Error(`Failed to load include: ${url}`);
-          const html = await response.text();
-          target.outerHTML = html;
-        } catch (error) {
-          console.warn("Could not load HTML include:", url, error);
-        }
-      })
-    );
-  }
-
   // Mobile Navigation
   (function bindMobileNav() {
     const btn = document.querySelector(".nav-toggle");
@@ -381,16 +326,37 @@
   })();
 
   // ------------------------------------------------------------------------
-  // Form Handling & WhatsApp Formatter
+  // Chip Selectors & Studio Project Intake Brief Handling
   // ------------------------------------------------------------------------
+  function initChipSelectors() {
+    function setupChipGroup(groupId, inputId) {
+      const group = document.getElementById(groupId);
+      const input = document.getElementById(inputId);
+      if (!group || !input) return;
+
+      const chips = group.querySelectorAll(".chip");
+      chips.forEach((chip) => {
+        chip.addEventListener("click", () => {
+          chips.forEach((c) => c.classList.remove("is-selected"));
+          chip.classList.add("is-selected");
+          input.value = chip.getAttribute("data-value") || chip.textContent.trim();
+        });
+      });
+    }
+
+    setupChipGroup("service-chip-group", "form-service");
+    setupChipGroup("budget-chip-group", "form-budget");
+    setupChipGroup("urgency-chip-group", "form-urgency");
+  }
+
   function initProjectForm() {
     const form = document.getElementById("project-form");
     const nameInput = document.getElementById("form-name");
     const phoneInput = document.getElementById("form-phone");
     const emailInput = document.getElementById("form-email");
-    const serviceSelect = document.getElementById("form-service");
-    const budgetSelect = document.getElementById("form-budget");
-    const urgencySelect = document.getElementById("form-urgency");
+    const serviceInput = document.getElementById("form-service");
+    const budgetInput = document.getElementById("form-budget");
+    const urgencyInput = document.getElementById("form-urgency");
     const linkInput = document.getElementById("form-link");
     const messageInput = document.getElementById("form-message");
     const charCounter = document.getElementById("char-counter");
@@ -416,7 +382,6 @@
       if (!alertBox) return;
       alertBox.textContent = msg;
       alertBox.className = `form-alert ${isSuccess ? "is-success" : "is-error"}`;
-      alertBox.scrollIntoView({ behavior: "smooth", block: "nearest" });
     }
 
     function clearAlert() {
@@ -429,26 +394,20 @@
       clearAlert();
       const name = nameInput ? nameInput.value.trim() : "";
       const phone = phoneInput ? phoneInput.value.trim() : "";
-      const service = serviceSelect ? serviceSelect.value : "";
       const message = messageInput ? messageInput.value.trim() : "";
 
       if (!name) {
-        showAlert("⚠️ Please enter your name.", false);
+        showAlert("⚠️ Please provide your name.", false);
         if (nameInput) nameInput.focus();
         return false;
       }
       if (!phone) {
-        showAlert("⚠️ Please enter your WhatsApp or phone number.", false);
+        showAlert("⚠️ Please provide your WhatsApp / Phone number.", false);
         if (phoneInput) phoneInput.focus();
         return false;
       }
-      if (!service) {
-        showAlert("⚠️ Please select the service you require.", false);
-        if (serviceSelect) serviceSelect.focus();
-        return false;
-      }
       if (!message) {
-        showAlert("⚠️ Please describe your project requirements.", false);
+        showAlert("⚠️ Please share a brief description of your creative requirements.", false);
         if (messageInput) messageInput.focus();
         return false;
       }
@@ -459,27 +418,27 @@
       const name = nameInput.value.trim();
       const phone = phoneInput.value.trim();
       const email = emailInput && emailInput.value.trim() ? emailInput.value.trim() : "Not provided";
-      const service = serviceSelect.value;
-      const budget = budgetSelect ? budgetSelect.value : "Standard";
-      const urgency = urgencySelect ? urgencySelect.value : "Standard";
+      const service = serviceInput ? serviceInput.value : "Reels & Shorts Editing";
+      const budget = budgetInput ? budgetInput.value : "Standard";
+      const urgency = urgencyInput ? urgencyInput.value : "Standard";
       const link = linkInput && linkInput.value.trim() ? linkInput.value.trim() : "Will share footage directly";
       const message = messageInput.value.trim();
 
-      const text = `👋 *New Project Inquiry - VisualEdit*\n\n` +
-        `👤 *Name:* ${name}\n` +
+      const text = `👋 *VisualEdit Studio — Project Intake Brief*\n\n` +
+        `👤 *Client:* ${name}\n` +
         `📱 *WhatsApp:* ${phone}\n` +
         `📧 *Email:* ${email}\n` +
-        `🎬 *Service:* ${service}\n` +
+        `🎬 *Discipline:* ${service}\n` +
         `💰 *Estimated Budget:* ${budget}\n` +
-        `⚡ *Urgency:* ${urgency}\n` +
-        `🔗 *Footage/Ref Link:* ${link}\n\n` +
-        `📝 *Project Details:*\n${message}\n\n` +
-        `_Sent via VisualEdit Studio Website_`;
+        `⚡ *Timeline:* ${urgency}\n` +
+        `🔗 *Raw Footage / Ref Link:* ${link}\n\n` +
+        `📝 *Creative Scope & Requirements:*\n${message}\n\n` +
+        `_Dispatched via VisualEdit Studio Brief_`;
 
       return `https://wa.me/6355705208?text=${encodeURIComponent(text)}`;
     }
 
-    // Direct WhatsApp Submission
+    // Direct WhatsApp Brief Dispatch
     if (btnWhatsapp) {
       btnWhatsapp.addEventListener("click", (e) => {
         e.preventDefault();
@@ -488,10 +447,10 @@
         const waUrl = getFormattedWhatsAppUrl();
         window.open(waUrl, "_blank", "noopener,noreferrer");
 
-        showAlert("✅ Opening WhatsApp with your pre-filled inquiry details! We'll reply shortly.", true);
+        showAlert("✅ WhatsApp opened with your project brief! Hit send to connect immediately.", true);
         showToast(
-          "Inquiry Prepared!",
-          "WhatsApp has been opened with your project details. Simply hit send to connect with us immediately!"
+          "Brief Dispatched",
+          "WhatsApp has been opened with your project brief details. Simply send the message to initiate our consultation!"
         );
       });
     }
@@ -501,10 +460,10 @@
       e.preventDefault();
       if (!validateForm()) return;
 
-      showAlert("✅ Inquiry received! We'll reach out to your WhatsApp/Phone shortly.", true);
+      showAlert("✅ Studio Brief recorded! We will reach out via WhatsApp/Email shortly.", true);
       showToast(
-        "Thank you, " + (nameInput.value.trim() || "Creator") + "!",
-        "Your project inquiry has been received. Our team will contact you on WhatsApp/Email within 1-2 hours."
+        "Brief Received",
+        "Thank you, " + (nameInput.value.trim() || "Creator") + ". Your project brief has been logged. We will review and connect within 1 hour."
       );
 
       form.reset();
@@ -527,15 +486,8 @@
   // Initialize all components
   bindSamples();
   bindPosters();
-  bindComboImages();
   bindModalClose();
-  bindComboSwitcher();
+  initChipSelectors();
   initProjectForm();
   initSocialCopyLinks();
-
-  loadHtmlIncludes().then(() => {
-    bindComboImages();
-    bindComboSwitcher();
-    if (locoInstance) locoInstance.update();
-  });
 })();
