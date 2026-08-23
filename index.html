@@ -3,48 +3,45 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Visual-Edit — Simple Video Editor</title>
+    <title>VisualEdit — Professional Video Editing & Creative Digital Studio</title>
     <meta
       name="description"
-      content="Visual-Edit is a simple, fast video editor and portfolio showcasing birthday and portrait edits, smooth scrolling, and professional video editing services. Trim, split, add effects, color grade, and share."
+      content="VisualEdit is a modern creative studio specializing in high-retention video editing, reels, YouTube content, event edits, custom poster design, and frontend web development."
     />
     <meta
       name="keywords"
-      content="video editor, simple video editor, online video editing, birthday video, portrait video, video effects, color grading, audio cleanup, video transitions, video portfolio, smooth scrolling, Locomotive Scroll, frontend developer, web design"
+      content="video editor, reels editor, YouTube editing, birthday video editing, poster design, frontend developer, video color grading, sound design, visualedit"
     />
     <meta name="robots" content="index, follow" />
-    <meta name="author" content="Visual-Edit" />
-    <meta name="theme-color" content="#0b1220" />
+    <meta name="author" content="VisualEdit" />
+    <meta name="theme-color" content="#090d16" />
     <link rel="canonical" href="/" />
     <link rel="icon" href="images/logo.jpg" type="image/jpeg" />
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
-    <meta property="og:title" content="Visual-Edit — Simple Video Editor" />
+    <meta property="og:title" content="VisualEdit — Professional Video Editing & Digital Studio" />
     <meta
       property="og:description"
-      content="Simple, fast video editor and portfolio: birthday and portrait edits, effects, color grading, and more."
+      content="High-impact video editing, reels, graphics, and frontend development. Fast 24-48h turnaround with 100% satisfaction."
     />
     <meta property="og:url" content="/" />
     <meta
       property="og:image"
-      content="https://images.unsplash.com/photo-1490810194309-344b3661ba39?q=80&w=1200&auto=format&fit=crop"
+      content="https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?q=80&w=1200&auto=format&fit=crop"
     />
-    <meta
-      property="og:image:alt"
-      content="Editing timeline and camera on desk"
-    />
+    <meta property="og:image:alt" content="VisualEdit Studio Workspace" />
 
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Visual-Edit — Simple Video Editor" />
+    <meta name="twitter:title" content="VisualEdit — Professional Video Editing Studio" />
     <meta
       name="twitter:description"
-      content="Simple, fast video editor and portfolio: birthday and portrait edits, effects, color grading, and more."
+      content="High-impact video editing, reels, graphics, and frontend development. Fast 24-48h turnaround with 100% satisfaction."
     />
     <meta
       name="twitter:image"
-      content="https://images.unsplash.com/photo-1490810194309-344b3661ba39?q=80&w=1200&auto=format&fit=crop"
+      content="https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?q=80&w=1200&auto=format&fit=crop"
     />
 
     <!-- Locomotive Scroll CSS -->
@@ -53,21 +50,11 @@
       href="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.css"
     />
 
-    <!-- Google Fonts: Poppins for stylish headings -->
+    <!-- Google Fonts: Plus Jakarta Sans & Outfit (Clean, realistic, modern typography) -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@700;800&display=swap"
-      rel="stylesheet"
-    />
-    <!-- Google Fonts: Pacifico 400 for selected section titles -->
-    <link
-      href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap"
-      rel="stylesheet"
-    />
-    <!-- Google Fonts: Delius Swash Caps 400 for subtitles -->
-    <link
-      href="https://fonts.googleapis.com/css2?family=Delius+Swash+Caps&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap"
       rel="stylesheet"
     />
 
@@ -77,44 +64,72 @@
   <body>
     <!-- Scroll progress bar -->
     <div id="scroll-progress" class="scroll-progress" aria-hidden="true"></div>
-    <!-- Header / Nav (outside the scroll container so it stays fixed) -->
+
+    <!-- Header / Nav -->
     <header class="site-header">
-      <div class="container">
-        <a class="logo" href="images/logo.jpg" data-scroll-to>Visual-Edit</a>
-        <button
-          class="nav-toggle"
-          aria-controls="primary-nav"
-          aria-expanded="false"
-          aria-label="Open menu"
-        >
-          <svg
-            class="icon icon-hamburger"
-            viewBox="0 0 24 24"
-            width="24"
-            height="24"
-            aria-hidden="true"
-          >
-            <path
-              d="M4 7h16M4 12h16M4 17h16"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2"
-              stroke-linecap="round"
-            />
-          </svg>
-        </button>
+      <div class="container site-header__inner">
+        <a class="logo" href="#hero" data-scroll-to>
+          <div class="logo__icon">
+            <span class="logo__glyph">VE</span>
+          </div>
+          <span class="logo__text">Visual<span class="logo__accent">Edit</span></span>
+        </a>
+
+        <!-- Desktop Navigation -->
         <nav id="primary-nav" class="nav" role="navigation">
-          <a href="#offerings" data-scroll-to>Offerings</a>
+          <a href="#offerings" data-scroll-to>Services</a>
           <a href="#features" data-scroll-to>Features</a>
-          <a href="#gallery" data-scroll-to>Gallery</a>
-          <a href="#shop" data-scroll-to>Shop</a>
+          <a href="#gallery" data-scroll-to>Portfolio</a>
+          <a href="#shop" data-scroll-to>Packages</a>
           <a href="#stats" data-scroll-to>Stats</a>
-          <a href="#services" data-scroll-to>Services</a>
+          <a href="#services" data-scroll-to>About</a>
           <a href="#faq" data-scroll-to>FAQ</a>
-          <a href="#contact" data-scroll-to>Contact</a>
+          <a href="#contact" data-scroll-to class="nav-link--contact">Get a Quote</a>
         </nav>
+
+        <!-- Header Actions: WhatsApp Button + Mobile Toggle -->
+        <div class="header-actions">
+          <!-- Prominent WhatsApp CTA in Navbar -->
+          <a
+            class="btn btn-nav-whatsapp"
+            href="https://wa.me/6355705208?text=Hi%20VisualEdit,%20I'm%20interested%20in%20your%20editing%20services!"
+            target="_blank"
+            rel="noopener"
+            aria-label="Chat on WhatsApp"
+          >
+            <span class="whatsapp-status-dot" aria-hidden="true"></span>
+            <svg class="icon-whatsapp" viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true">
+              <path d="M20.52 3.48A11.86 11.86 0 0 0 12.02 0C5.5 0 .25 5.24.25 11.72c0 2.06.54 4.06 1.58 5.84L0 24l6.6-1.72a11.7 11.7 0 0 0 5.4 1.37h.01c6.49 0 11.77-5.24 11.77-11.72 0-3.14-1.24-6.09-3.26-8.19ZM12 21.14h-.01a9.5 9.5 0 0 1-4.85-1.31l-.35-.2-3.92 1.02 1.05-3.82-.23-.39a9.4 9.4 0 0 1-1.45-5.12C2.24 6.45 6.62 2.1 12.02 2.1c2.52 0 4.89.98 6.68 2.76a9.47 9.47 0 0 1 2.78 6.67c0 5.39-4.39 9.62-9.48 9.62Zm5.46-7.18c-.3-.15-1.79-.88-2.06-.98-.28-.1-.48-.15-.69.15-.2.3-.79.98-.96 1.18-.18.2-.36.22-.66.07-.3-.15-1.26-.46-2.4-1.48-.89-.78-1.49-1.75-1.66-2.05-.17-.3 0-.46.13-.61.13-.15.3-.36.45-.54.15-.18.2-.31.3-.51.1-.2.05-.38-.02-.54-.07-.15-.69-1.66-.94-2.28-.25-.61-.5-.52-.69-.53l-.59-.01c-.2 0-.52.07-.79.38-.27.3-1.04 1.02-1.04 2.49 0 1.46 1.07 2.88 1.22 3.08.15.2 2.1 3.2 5.07 4.49.71.31 1.27.5 1.7.64.71.23 1.36.2 1.88.12.58-.09 1.79-.73 2.04-1.43.25-.69.25-1.28.18-1.41-.07-.13-.27-.21-.57-.36Z"/>
+            </svg>
+            <span class="btn-text">WhatsApp</span>
+          </a>
+
+          <button
+            class="nav-toggle"
+            aria-controls="primary-nav"
+            aria-expanded="false"
+            aria-label="Open menu"
+          >
+            <svg
+              class="icon icon-hamburger"
+              viewBox="0 0 24 24"
+              width="24"
+              height="24"
+              aria-hidden="true"
+            >
+              <path
+                d="M4 7h16M4 12h16M4 17h16"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+              />
+            </svg>
+          </button>
+        </div>
       </div>
     </header>
+
     <!-- Mobile menu backdrop -->
     <div class="nav-backdrop" data-nav-close></div>
 
@@ -122,231 +137,310 @@
     <main data-scroll-container>
       <!-- HERO -->
       <section id="hero" class="section hero" data-scroll-section>
-        <div class="container">
+        <div class="hero__overlay"></div>
+        <div class="container hero__container">
           <div class="hero__content">
-            <h1 class="hero__title" data-scroll data-scroll-speed="1">
-              Create. Edit. Share.
+            <!-- Studio Pill Badge -->
+            <div class="hero__badge" data-scroll data-scroll-speed="1">
+              <span class="badge-dot"></span>
+              <span class="badge-text">⚡ Professional Video Editing & Creative Studio</span>
+            </div>
+
+            <h1 class="hero__title" data-scroll data-scroll-speed="1.2">
+              High-Impact Video Editing <br />
+              <span class="text-gradient">& Creative Visuals</span>
             </h1>
+
             <p
               class="hero__subtitle"
               data-scroll
-              data-scroll-delay="0.1"
+              data-scroll-delay="0.08"
               data-scroll-speed="1"
             >
-              A simple, fast video editor for everyone.
+              From viral short-form reels to cinema-grade story edits, custom promotional graphics, and high-converting web experiences. Built for creators, founders, and brands.
             </p>
+
             <div
               class="hero__actions"
               data-scroll
               data-scroll-delay="0.15"
               data-scroll-class="is-inview"
             >
-              <a href="#stats" class="btn btn-primary" data-scroll-to
-                >See Stats</a
+              <a href="#contact" class="btn btn-primary btn-lg" data-scroll-to>
+                <span>Get Instant Quote</span>
+                <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <line x1="5" y1="12" x2="19" y2="12"></line>
+                  <polyline points="12 5 19 12 12 19"></polyline>
+                </svg>
+              </a>
+              <a
+                href="https://wa.me/6355705208?text=Hi%20VisualEdit,%20I'm%20looking%20for%20video%20editing%20services."
+                target="_blank"
+                rel="noopener"
+                class="btn btn-whatsapp-hero btn-lg"
               >
-              <a href="#features" class="btn btn-secondary" data-scroll-to
-                >Explore Features</a
-              >
+                <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true">
+                  <path d="M20.52 3.48A11.86 11.86 0 0 0 12.02 0C5.5 0 .25 5.24.25 11.72c0 2.06.54 4.06 1.58 5.84L0 24l6.6-1.72a11.7 11.7 0 0 0 5.4 1.37h.01c6.49 0 11.77-5.24 11.77-11.72 0-3.14-1.24-6.09-3.26-8.19ZM12 21.14h-.01a9.5 9.5 0 0 1-4.85-1.31l-.35-.2-3.92 1.02 1.05-3.82-.23-.39a9.4 9.4 0 0 1-1.45-5.12C2.24 6.45 6.62 2.1 12.02 2.1c2.52 0 4.89.98 6.68 2.76a9.47 9.47 0 0 1 2.78 6.67c0 5.39-4.39 9.62-9.48 9.62Zm5.46-7.18c-.3-.15-1.79-.88-2.06-.98-.28-.1-.48-.15-.69.15-.2.3-.79.98-.96 1.18-.18.2-.36.22-.66.07-.3-.15-1.26-.46-2.4-1.48-.89-.78-1.49-1.75-1.66-2.05-.17-.3 0-.46.13-.61.13-.15.3-.36.45-.54.15-.18.2-.31.3-.51.1-.2.05-.38-.02-.54-.07-.15-.69-1.66-.94-2.28-.25-.61-.5-.52-.69-.53l-.59-.01c-.2 0-.52.07-.79.38-.27.3-1.04 1.02-1.04 2.49 0 1.46 1.07 2.88 1.22 3.08.15.2 2.1 3.2 5.07 4.49.71.31 1.27.5 1.7.64.71.23 1.36.2 1.88.12.58-.09 1.79-.73 2.04-1.43.25-.69.25-1.28.18-1.41-.07-.13-.27-.21-.57-.36Z"/>
+                </svg>
+                <span>Chat on WhatsApp</span>
+              </a>
+            </div>
+
+            <!-- Trust proof badges -->
+            <div class="hero__trust-strip" data-scroll data-scroll-delay="0.2">
+              <div class="trust-item">
+                <span class="trust-icon">⏱️</span>
+                <span>24-48h Delivery</span>
+              </div>
+              <div class="trust-divider"></div>
+              <div class="trust-item">
+                <span class="trust-icon">⭐</span>
+                <span>4.9/5 Rating</span>
+              </div>
+              <div class="trust-divider"></div>
+              <div class="trust-item">
+                <span class="trust-icon">🔄</span>
+                <span>Free Revisions</span>
+              </div>
             </div>
           </div>
         </div>
-        <!-- Decorative bubbles -->
-        <div class="decor" aria-hidden="true">
-          <span class="bubble bubble--1"></span>
-          <span class="bubble bubble--2"></span>
-          <span class="bubble bubble--3"></span>
-        </div>
+
+        <!-- Ambient glow blobs -->
+        <div class="ambient-glow ambient-glow--1" aria-hidden="true"></div>
+        <div class="ambient-glow ambient-glow--2" aria-hidden="true"></div>
       </section>
 
-      <!-- OFFERINGS -->
+      <!-- OFFERINGS / SERVICES -->
       <section id="offerings" class="section offerings" data-scroll-section>
         <div class="container">
-          <h2 class="section__title" data-scroll data-scroll-class="is-inview">
-            Services we provide
-          </h2>
-          <p
-            class="section__subtitle"
-            data-scroll
-            data-scroll-class="is-inview"
-          >
-            End-to-end creative support across video, design, and storytelling.
-          </p>
+          <div class="section__header" data-scroll data-scroll-class="is-inview">
+            <span class="section__badge">Services</span>
+            <h2 class="section__title">What We Create</h2>
+            <p class="section__subtitle">
+              End-to-end creative post-production, visual branding, and frontend web development.
+            </p>
+          </div>
 
           <div class="cards cards--offerings">
-            <article class="card" data-scroll data-scroll-class="is-inview">
-              <div class="card__icon">📝</div>
-              <h3 class="card__title">Blog editing</h3>
-              <p class="card__desc">
-                Polished drafts with tight structure and clear visuals.
+            <article class="service-card" data-scroll data-scroll-class="is-inview">
+              <div class="service-card__icon-box service-card__icon--reels">
+                <span>🎬</span>
+              </div>
+              <h3 class="service-card__title">Reels & Shorts Editing</h3>
+              <p class="service-card__desc">
+                High-hook pacing, dynamic captions, sound design, and zoom punches engineered for viral retention.
               </p>
+              <div class="service-card__tag">From ₹250 / edit</div>
             </article>
-            <article
-              class="card"
-              data-scroll
-              data-scroll-class="is-inview"
-              data-scroll-delay="0.05"
-            >
-              <div class="card__icon">🎞️</div>
-              <h3 class="card__title">Reels editing</h3>
-              <p class="card__desc">
-                Hooky cuts, captions, and pacing tuned for social.
+
+            <article class="service-card" data-scroll data-scroll-class="is-inview" data-scroll-delay="0.05">
+              <div class="service-card__icon-box service-card__icon--youtube">
+                <span>📹</span>
+              </div>
+              <h3 class="service-card__title">YouTube & Long-Form</h3>
+              <p class="service-card__desc">
+                Story-driven pacing, multi-cam cuts, motion graphics, sound layering, and polished visual flow.
               </p>
+              <div class="service-card__tag">Custom Quote</div>
             </article>
-            <article
-              class="card"
-              data-scroll
-              data-scroll-class="is-inview"
-              data-scroll-delay="0.1"
-            >
-              <div class="card__icon">🖼️</div>
-              <h3 class="card__title">Posters making</h3>
-              <p class="card__desc">
-                Bold layouts tailored to your campaign voice.
+
+            <article class="service-card" data-scroll data-scroll-class="is-inview" data-scroll-delay="0.1">
+              <div class="service-card__icon-box service-card__icon--birthday">
+                <span>🎂</span>
+              </div>
+              <h3 class="service-card__title">Birthday & Event Films</h3>
+              <p class="service-card__desc">
+                Cinematic montage edits with personalized music, seamless transitions, and emotional highlights.
               </p>
+              <div class="service-card__tag">Popular Choice</div>
             </article>
-            <article
-              class="card"
-              data-scroll
-              data-scroll-class="is-inview"
-              data-scroll-delay="0.15"
-            >
-              <div class="card__icon">📄</div>
-              <h3 class="card__title">Resume making</h3>
-              <p class="card__desc">
-                Impact-first resumes with clear achievement stories.
+
+            <article class="service-card" data-scroll data-scroll-class="is-inview" data-scroll-delay="0.15">
+              <div class="service-card__icon-box service-card__icon--posters">
+                <span>🖼️</span>
+              </div>
+              <h3 class="service-card__title">Poster & Graphic Design</h3>
+              <p class="service-card__desc">
+                Eye-catching event banners, YouTube thumbnails, and promotional posters that drive clicks.
               </p>
+              <div class="service-card__tag">High-Resolution</div>
             </article>
-            <article
-              class="card"
-              data-scroll
-              data-scroll-class="is-inview"
-              data-scroll-delay="0.2"
-            >
-              <div class="card__icon">📊</div>
-              <h3 class="card__title">Slide presentations</h3>
-              <p class="card__desc">
-                Narrative-led decks with sharp visuals and flow.
+
+            <article class="service-card" data-scroll data-scroll-class="is-inview" data-scroll-delay="0.2">
+              <div class="service-card__icon-box service-card__icon--resume">
+                <span>📄</span>
+              </div>
+              <h3 class="service-card__title">Resumes & Presentations</h3>
+              <p class="service-card__desc">
+                Modern ATS-friendly resume formatting and pitch deck slide designs with sharp typography.
               </p>
+              <div class="service-card__tag">Professional Polish</div>
+            </article>
+
+            <article class="service-card" data-scroll data-scroll-class="is-inview" data-scroll-delay="0.25">
+              <div class="service-card__icon-box service-card__icon--web">
+                <span>🌐</span>
+              </div>
+              <h3 class="service-card__title">Frontend Web Development</h3>
+              <p class="service-card__desc">
+                Modern responsive landing pages, portfolio websites, UI bug fixes, and clean performance code.
+              </p>
+              <div class="service-card__tag">Full Stack Support</div>
             </article>
           </div>
         </div>
       </section>
 
-      <!-- FEATURES -->
+      <!-- FEATURES / WORKFLOW -->
       <section id="features" class="section features" data-scroll-section>
         <div class="container">
-          <h2 class="section__title" data-scroll data-scroll-class="is-inview">
-            Powerful, yet simple
-          </h2>
-          <p
-            class="section__subtitle"
-            data-scroll
-            data-scroll-class="is-inview"
-          >
-            Everything you need to create stunning videos in minutes.
-          </p>
+          <div class="section__header" data-scroll data-scroll-class="is-inview">
+            <span class="section__badge">Features</span>
+            <h2 class="section__title">Precision Post-Production</h2>
+            <p class="section__subtitle">
+              Every cut, color grade, and transition is crafted with meticulous attention to detail.
+            </p>
+          </div>
 
-          <div class="cards">
-            <article class="card" data-scroll data-scroll-class="is-inview">
-              <div class="card__icon">✂️</div>
-              <h3 class="card__title">Trim & Split</h3>
-              <p class="card__desc">
-                Quickly cut, trim, and split clips with frame accuracy.
+          <div class="cards cards--features">
+            <article class="feature-card" data-scroll data-scroll-class="is-inview">
+              <div class="feature-card__icon">✂️</div>
+              <h3 class="feature-card__title">Frame-Accurate Cuts</h3>
+              <p class="feature-card__desc">
+                Clean pacing, dead-air removal, seamless jump cuts, and beat-matched rhythm sync.
               </p>
             </article>
-            <article
-              class="card"
-              data-scroll
-              data-scroll-class="is-inview"
-              data-scroll-delay="0.1"
-            >
-              <div class="card__icon">🎚️</div>
-              <h3 class="card__title">Color & Audio</h3>
-              <p class="card__desc">
-                Enhance colors, balance audio, and remove noise easily.
+
+            <article class="feature-card" data-scroll data-scroll-class="is-inview" data-scroll-delay="0.1">
+              <div class="feature-card__icon">🎚️</div>
+              <h3 class="feature-card__title">Color & Audio Mastering</h3>
+              <p class="feature-card__desc">
+                Skin-tone correction, vibrant color grading LUTs, noise reduction, and balanced background scores.
               </p>
             </article>
-            <article
-              class="card"
-              data-scroll
-              data-scroll-class="is-inview"
-              data-scroll-delay="0.2"
-            >
-              <div class="card__icon">✨</div>
-              <h3 class="card__title">Effects & Titles</h3>
-              <p class="card__desc">
-                Add transitions, overlays, captions, and animated titles.
+
+            <article class="feature-card" data-scroll data-scroll-class="is-inview" data-scroll-delay="0.2">
+              <div class="feature-card__icon">✨</div>
+              <h3 class="feature-card__title">Dynamic SFX & Titles</h3>
+              <p class="feature-card__desc">
+                Engaging animated captions, smooth overlays, sound effects (whooshes, risers), and clean brand titles.
               </p>
             </article>
           </div>
         </div>
       </section>
 
-      <!-- GALLERY / PARALLAX -->
+      <!-- GALLERY / PORTFOLIO -->
       <section id="gallery" class="section gallery" data-scroll-section>
         <div class="container">
-          <h2 class="section__title" data-scroll data-scroll-class="is-inview">
-            See it in action
-          </h2>
-          <p
-            class="section__subtitle"
-            data-scroll
-            data-scroll-class="is-inview"
-          >
-            Reels of recent edits.
-          </p>
-          <div class="samples__row">
-            <div class="sample" data-video="Samples/Sample01.mp4">
-              <video
-                class="sample__video"
-                muted
-                playsinline
-                webkit-playsinline
-                preload="metadata"
-                poster=""
-              >
-                <source src="Samples/Sample01.mp4" type="video/mp4" />
-              </video>
-              <div class="sample__label">Birthday Sample 01</div>
+          <div class="section__header" data-scroll data-scroll-class="is-inview">
+            <span class="section__badge">Portfolio</span>
+            <h2 class="section__title">Featured Video Edits & Posters</h2>
+            <p class="section__subtitle">
+              Click any sample below to preview in full resolution.
+            </p>
+          </div>
+
+          <div class="portfolio-grid">
+            <!-- Sample 1 -->
+            <div class="sample-card sample" data-video="Samples/Sample01.mp4" data-scroll data-scroll-class="is-inview">
+              <div class="sample-card__media">
+                <video
+                  class="sample__video"
+                  muted
+                  playsinline
+                  webkit-playsinline
+                  preload="metadata"
+                  poster=""
+                >
+                  <source src="Samples/Sample01.mp4" type="video/mp4" />
+                </video>
+                <div class="sample-card__play-btn" aria-label="Play video">
+                  <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+                    <polygon points="5 3 19 12 5 21 5 3"></polygon>
+                  </svg>
+                </div>
+              </div>
+              <div class="sample-card__info">
+                <span class="sample-card__tag">Birthday Special</span>
+                <h4 class="sample-card__title">Celebration Montage 01</h4>
+              </div>
             </div>
-            <div class="sample" data-video="Samples/Sample02.mp4">
-              <video
-                class="sample__video"
-                muted
-                playsinline
-                webkit-playsinline
-                preload="metadata"
-                poster=""
-              >
-                <source src="Samples/Sample02.mp4" type="video/mp4" />
-              </video>
-              <div class="sample__label">Birthday Sample 02</div>
+
+            <!-- Sample 2 -->
+            <div class="sample-card sample" data-video="Samples/Sample02.mp4" data-scroll data-scroll-class="is-inview" data-scroll-delay="0.05">
+              <div class="sample-card__media">
+                <video
+                  class="sample__video"
+                  muted
+                  playsinline
+                  webkit-playsinline
+                  preload="metadata"
+                  poster=""
+                >
+                  <source src="Samples/Sample02.mp4" type="video/mp4" />
+                </video>
+                <div class="sample-card__play-btn" aria-label="Play video">
+                  <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+                    <polygon points="5 3 19 12 5 21 5 3"></polygon>
+                  </svg>
+                </div>
+              </div>
+              <div class="sample-card__info">
+                <span class="sample-card__tag">Cinematic Reel</span>
+                <h4 class="sample-card__title">Celebration Highlight 02</h4>
+              </div>
             </div>
-            <div class="sample" data-video="Samples/Sample 03.mp4">
-              <video
-                class="sample__video"
-                muted
-                playsinline
-                webkit-playsinline
-                preload="metadata"
-                poster=""
-              >
-                <source src="Samples/Sample 03.mp4" type="video/mp4" />
-              </video>
-              <div class="sample__label">Sample 03</div>
+
+            <!-- Sample 3 -->
+            <div class="sample-card sample" data-video="Samples/Sample 03.mp4" data-scroll data-scroll-class="is-inview" data-scroll-delay="0.1">
+              <div class="sample-card__media">
+                <video
+                  class="sample__video"
+                  muted
+                  playsinline
+                  webkit-playsinline
+                  preload="metadata"
+                  poster=""
+                >
+                  <source src="Samples/Sample 03.mp4" type="video/mp4" />
+                </video>
+                <div class="sample-card__play-btn" aria-label="Play video">
+                  <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+                    <polygon points="5 3 19 12 5 21 5 3"></polygon>
+                  </svg>
+                </div>
+              </div>
+              <div class="sample-card__info">
+                <span class="sample-card__tag">Shorts & Hooks</span>
+                <h4 class="sample-card__title">Creative Cut 03</h4>
+              </div>
             </div>
-            <div class="sample" data-video="Samples/Sample 04.mp4">
-              <video
-                class="sample__video"
-                muted
-                playsinline
-                webkit-playsinline
-                preload="metadata"
-                poster=""
-              >
-                <source src="Samples/Sample 04.mp4" type="video/mp4" />
-              </video>
-              <div class="sample__label">Sample 04</div>
+
+            <!-- Sample 4 -->
+            <div class="sample-card sample" data-video="Samples/Sample 04.mp4" data-scroll data-scroll-class="is-inview" data-scroll-delay="0.15">
+              <div class="sample-card__media">
+                <video
+                  class="sample__video"
+                  muted
+                  playsinline
+                  webkit-playsinline
+                  preload="metadata"
+                  poster=""
+                >
+                  <source src="Samples/Sample 04.mp4" type="video/mp4" />
+                </video>
+                <div class="sample-card__play-btn" aria-label="Play video">
+                  <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+                    <polygon points="5 3 19 12 5 21 5 3"></polygon>
+                  </svg>
+                </div>
+              </div>
+              <div class="sample-card__info">
+                <span class="sample-card__tag">Pacing & Beats</span>
+                <h4 class="sample-card__title">Motion Edit 04</h4>
+              </div>
             </div>
           </div>
 
@@ -355,71 +449,371 @@
               href="https://drive.google.com/drive/folders/1HxvgWXOBDQcClHMO-lZxTTw88esChpK6"
               target="_blank"
               rel="noopener"
-              class="btn btn-primary"
+              class="btn btn-secondary btn-drive"
               aria-label="View more edits on Google Drive"
             >
-              📁 Show More Edits
+              <span>📁 Explore Full Drive Portfolio</span>
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                <polyline points="15 3 21 3 21 9"></polyline>
+                <line x1="10" y1="14" x2="21" y2="3"></line>
+              </svg>
             </a>
           </div>
 
-          <p
-            class="section__subtitle"
-            data-scroll
-            data-scroll-class="is-inview"
-            data-scroll-delay="0.05"
-          >
-            Poster Making
-          </p>
-          <div class="posters__row">
-            <div
-              class="poster"
-              data-image="images/img1.jpeg"
-              data-scroll
-              data-scroll-class="is-inview"
-            >
-              <img
-                class="poster__img"
-                src="images/img1.jpeg"
-                alt="Poster demo 1"
-                loading="lazy"
-              />
-              <div class="poster__label">Poster 01</div>
-            </div>
-            <div
-              class="poster"
-              data-image="images/img2.jpg"
-              data-scroll
-              data-scroll-class="is-inview"
-              data-scroll-delay="0.05"
-            >
-              <img
-                class="poster__img"
-                src="images/img2.jpg"
-                alt="Poster demo 2"
-                loading="lazy"
-              />
-              <div class="poster__label">Poster 02</div>
+          <!-- Posters Grid -->
+          <div class="posters-container" data-scroll data-scroll-class="is-inview">
+            <h3 class="subsection__title">Graphic & Poster Showcase</h3>
+            <div class="posters__row">
+              <div
+                class="poster-card poster"
+                data-image="images/img1.jpeg"
+                title="Click to view high-res poster"
+              >
+                <img
+                  class="poster__img"
+                  src="images/img1.jpeg"
+                  alt="Poster demo 1"
+                  loading="lazy"
+                />
+                <div class="poster-card__overlay">
+                  <span class="poster-zoom-icon">🔍</span>
+                  <span class="poster__label">Poster Design 01</span>
+                </div>
+              </div>
+              <div
+                class="poster-card poster"
+                data-image="images/img2.jpg"
+                title="Click to view high-res poster"
+              >
+                <img
+                  class="poster__img"
+                  src="images/img2.jpg"
+                  alt="Poster demo 2"
+                  loading="lazy"
+                />
+                <div class="poster-card__overlay">
+                  <span class="poster-zoom-icon">🔍</span>
+                  <span class="poster__label">Poster Design 02</span>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
-      <!-- SHOP / COMBO OFFERS (loaded from separate file) -->
-      <div data-include="shop-section.html"></div>
+      <!-- SHOP / SPECIAL OFFERS -->
+      <section id="shop" class="section shop" data-scroll-section>
+        <div class="container">
+          <div class="section__header" data-scroll data-scroll-class="is-inview">
+            <span class="section__badge">🔥 Limited Time Deals</span>
+            <h2 class="section__title">Special Combo Packages</h2>
+            <p class="section__subtitle">
+              Curated high-value creative bundles tailored for content creators, founders, and developers.
+            </p>
+          </div>
+
+          <!-- Switcher Tabs -->
+          <div class="combo__switch-wrapper" data-scroll data-scroll-class="is-inview">
+            <div class="combo__switch" aria-label="Select combo package category">
+              <button
+                type="button"
+                class="combo__switch-btn is-active"
+                data-combo-switch="1"
+                aria-label="Show combo offers 1"
+              >
+                <span class="tab-dot"></span> Featured Combos
+              </button>
+              <button
+                type="button"
+                class="combo__switch-btn"
+                data-combo-switch="2"
+                aria-label="Show combo offers 2"
+              >
+                <span class="tab-dot"></span> Growth Bundles
+              </button>
+            </div>
+          </div>
+
+          <!-- Page 1: Featured Combos -->
+          <div class="combo__grid is-active" data-combo-page="1">
+            <!-- Card 1 -->
+            <div class="combo-card" data-scroll data-scroll-class="is-inview">
+              <div class="combo-card__banner">
+                <span class="combo-tag combo-tag--popular">Most Popular</span>
+                <div
+                  class="combo-card__image combo__image--clickable"
+                  data-image="images/Superprofile editing combo offer.png"
+                  title="Click to zoom image"
+                >
+                  <img
+                    src="images/Superprofile editing combo offer.png"
+                    alt="Ultimate Editing Combo"
+                    loading="lazy"
+                  />
+                  <div class="image-zoom-hint">🔍 Tap to Preview</div>
+                </div>
+              </div>
+
+              <div class="combo-card__body">
+                <div class="combo-card__header">
+                  <h3 class="combo-card__title">Ultimate Editing Combo</h3>
+                  <div class="combo-card__price-box">
+                    <span class="combo-card__old-price">₹1,100</span>
+                    <span class="combo-card__price">₹550</span>
+                    <span class="combo-card__discount">50% OFF</span>
+                  </div>
+                </div>
+
+                <p class="combo-card__desc">
+                  Complete high-retention video editing assets, trending BGM packs, transitions, and promotional poster design.
+                </p>
+
+                <ul class="combo-card__features">
+                  <li><span class="f-check">✓</span> High-Retention Short-form Reel Edit</li>
+                  <li><span class="f-check">✓</span> Custom Campaign Poster / Thumbnail</li>
+                  <li><span class="f-check">✓</span> Sound Effects (SFX) & Color Grading</li>
+                  <li><span class="f-check">✓</span> Fast 24-48h Delivery + 2 Revisions</li>
+                </ul>
+
+                <div class="combo-card__coupon">
+                  <span class="coupon-label">Coupon:</span>
+                  <code class="coupon-code">TECH05</code>
+                  <span class="coupon-benefit">Extra 5% OFF on WhatsApp</span>
+                </div>
+
+                <div class="combo-card__actions">
+                  <a
+                    href="https://wa.me/6355705208?text=Hi%20VisualEdit,%20I%20want%20to%20order%20the%20*ULTIMATE%20EDITING%20COMBO*%20for%20₹550%20(Coupon:%20TECH05)"
+                    target="_blank"
+                    rel="noopener"
+                    class="btn btn-whatsapp w-full"
+                  >
+                    <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true">
+                      <path d="M20.52 3.48A11.86 11.86 0 0 0 12.02 0C5.5 0 .25 5.24.25 11.72c0 2.06.54 4.06 1.58 5.84L0 24l6.6-1.72a11.7 11.7 0 0 0 5.4 1.37h.01c6.49 0 11.77-5.24 11.77-11.72 0-3.14-1.24-6.09-3.26-8.19ZM12 21.14h-.01a9.5 9.5 0 0 1-4.85-1.31l-.35-.2-3.92 1.02 1.05-3.82-.23-.39a9.4 9.4 0 0 1-1.45-5.12C2.24 6.45 6.62 2.1 12.02 2.1c2.52 0 4.89.98 6.68 2.76a9.47 9.47 0 0 1 2.78 6.67c0 5.39-4.39 9.62-9.48 9.62Zm5.46-7.18c-.3-.15-1.79-.88-2.06-.98-.28-.1-.48-.15-.69.15-.2.3-.79.98-.96 1.18-.18.2-.36.22-.66.07-.3-.15-1.26-.46-2.4-1.48-.89-.78-1.49-1.75-1.66-2.05-.17-.3 0-.46.13-.61.13-.15.3-.36.45-.54.15-.18.2-.31.3-.51.1-.2.05-.38-.02-.54-.07-.15-.69-1.66-.94-2.28-.25-.61-.5-.52-.69-.53l-.59-.01c-.2 0-.52.07-.79.38-.27.3-1.04 1.02-1.04 2.49 0 1.46 1.07 2.88 1.22 3.08.15.2 2.1 3.2 5.07 4.49.71.31 1.27.5 1.7.64.71.23 1.36.2 1.88.12.58-.09 1.79-.73 2.04-1.43.25-.69.25-1.28.18-1.41-.07-.13-.27-.21-.57-.36Z"/>
+                    </svg>
+                    <span>Get Offer on WhatsApp</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="combo-card" data-scroll data-scroll-class="is-inview" data-scroll-delay="0.1">
+              <div class="combo-card__banner">
+                <span class="combo-tag combo-tag--dev">All-in-One Dev</span>
+                <div
+                  class="combo-card__image combo__image--clickable"
+                  data-image="images/Web development bundle offer in style.png"
+                  title="Click to zoom image"
+                >
+                  <img
+                    src="images/Web development bundle offer in style.png"
+                    alt="Complete Web Development Package"
+                    loading="lazy"
+                  />
+                  <div class="image-zoom-hint">🔍 Tap to Preview</div>
+                </div>
+              </div>
+
+              <div class="combo-card__body">
+                <div class="combo-card__header">
+                  <h3 class="combo-card__title">Complete Web Dev Package</h3>
+                  <div class="combo-card__price-box">
+                    <span class="combo-card__old-price">₹1,999</span>
+                    <span class="combo-card__price">₹999</span>
+                    <span class="combo-card__discount">50% OFF</span>
+                  </div>
+                </div>
+
+                <p class="combo-card__desc">
+                  Modern responsive frontend website design & development, layout fixing, bug resolution, and interview prep assets.
+                </p>
+
+                <ul class="combo-card__features">
+                  <li><span class="f-check">✓</span> Custom Responsive Landing Page / Portfolio</li>
+                  <li><span class="f-check">✓</span> Frontend Code Structure & Bug Fixing</li>
+                  <li><span class="f-check">✓</span> Interactive Animations & Mobile Polish</li>
+                  <li><span class="f-check">✓</span> Tech Stack Guidance & Source Code</li>
+                </ul>
+
+                <div class="combo-card__coupon">
+                  <span class="coupon-label">Coupon:</span>
+                  <code class="coupon-code">TECH05</code>
+                  <span class="coupon-benefit">Extra 5% OFF on WhatsApp</span>
+                </div>
+
+                <div class="combo-card__actions">
+                  <a
+                    href="https://wa.me/6355705208?text=Hi%20VisualEdit,%20I%20am%20interested%20in%20*THE%20COMPLETE%20PACKAGE%20OF%20WEB%20DEVELOPMENT*%20for%20₹999%20(Coupon:%20TECH05)"
+                    target="_blank"
+                    rel="noopener"
+                    class="btn btn-whatsapp w-full"
+                  >
+                    <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true">
+                      <path d="M20.52 3.48A11.86 11.86 0 0 0 12.02 0C5.5 0 .25 5.24.25 11.72c0 2.06.54 4.06 1.58 5.84L0 24l6.6-1.72a11.7 11.7 0 0 0 5.4 1.37h.01c6.49 0 11.77-5.24 11.77-11.72 0-3.14-1.24-6.09-3.26-8.19ZM12 21.14h-.01a9.5 9.5 0 0 1-4.85-1.31l-.35-.2-3.92 1.02 1.05-3.82-.23-.39a9.4 9.4 0 0 1-1.45-5.12C2.24 6.45 6.62 2.1 12.02 2.1c2.52 0 4.89.98 6.68 2.76a9.47 9.47 0 0 1 2.78 6.67c0 5.39-4.39 9.62-9.48 9.62Zm5.46-7.18c-.3-.15-1.79-.88-2.06-.98-.28-.1-.48-.15-.69.15-.2.3-.79.98-.96 1.18-.18.2-.36.22-.66.07-.3-.15-1.26-.46-2.4-1.48-.89-.78-1.49-1.75-1.66-2.05-.17-.3 0-.46.13-.61.13-.15.3-.36.45-.54.15-.18.2-.31.3-.51.1-.2.05-.38-.02-.54-.07-.15-.69-1.66-.94-2.28-.25-.61-.5-.52-.69-.53l-.59-.01c-.2 0-.52.07-.79.38-.27.3-1.04 1.02-1.04 2.49 0 1.46 1.07 2.88 1.22 3.08.15.2 2.1 3.2 5.07 4.49.71.31 1.27.5 1.7.64.71.23 1.36.2 1.88.12.58-.09 1.79-.73 2.04-1.43.25-.69.25-1.28.18-1.41-.07-.13-.27-.21-.57-.36Z"/>
+                    </svg>
+                    <span>Get Offer on WhatsApp</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Page 2: Growth Bundles -->
+          <div class="combo__grid" data-combo-page="2">
+            <!-- Card 3 -->
+            <div class="combo-card">
+              <div class="combo-card__banner">
+                <span class="combo-tag combo-tag--starter">Starter Kit</span>
+                <div
+                  class="combo-card__image combo__image--clickable"
+                  data-image="images/img1.jpeg"
+                  title="Click to zoom image"
+                >
+                  <img src="images/img1.jpeg" alt="Creator Starter Pack" loading="lazy" />
+                  <div class="image-zoom-hint">🔍 Tap to Preview</div>
+                </div>
+              </div>
+
+              <div class="combo-card__body">
+                <div class="combo-card__header">
+                  <h3 class="combo-card__title">Creator Starter Pack</h3>
+                  <div class="combo-card__price-box">
+                    <span class="combo-card__old-price">₹1,200</span>
+                    <span class="combo-card__price">₹699</span>
+                    <span class="combo-card__discount">42% OFF</span>
+                  </div>
+                </div>
+
+                <p class="combo-card__desc">
+                  Perfect for new creators: 2 short video edits + 2 custom graphics posters with fast turnaround and revisions.
+                </p>
+
+                <ul class="combo-card__features">
+                  <li><span class="f-check">✓</span> 2x Reels / Shorts Editing (Up to 60s each)</li>
+                  <li><span class="f-check">✓</span> 2x Custom High-Resolution Posters</li>
+                  <li><span class="f-check">✓</span> Captions, Sound FX, & Color Correction</li>
+                  <li><span class="f-check">✓</span> Dedicated WhatsApp Support</li>
+                </ul>
+
+                <div class="combo-card__coupon">
+                  <span class="coupon-label">Coupon:</span>
+                  <code class="coupon-code">TECH05</code>
+                  <span class="coupon-benefit">Extra 5% OFF on WhatsApp</span>
+                </div>
+
+                <div class="combo-card__actions">
+                  <a
+                    href="https://wa.me/6355705208?text=Hi%20VisualEdit,%20I%20am%20interested%20in%20*CONTENT%20CREATOR%20STARTER%20PACK*%20for%20₹699%20(Coupon:%20TECH05)"
+                    target="_blank"
+                    rel="noopener"
+                    class="btn btn-whatsapp w-full"
+                  >
+                    <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true">
+                      <path d="M20.52 3.48A11.86 11.86 0 0 0 12.02 0C5.5 0 .25 5.24.25 11.72c0 2.06.54 4.06 1.58 5.84L0 24l6.6-1.72a11.7 11.7 0 0 0 5.4 1.37h.01c6.49 0 11.77-5.24 11.77-11.72 0-3.14-1.24-6.09-3.26-8.19ZM12 21.14h-.01a9.5 9.5 0 0 1-4.85-1.31l-.35-.2-3.92 1.02 1.05-3.82-.23-.39a9.4 9.4 0 0 1-1.45-5.12C2.24 6.45 6.62 2.1 12.02 2.1c2.52 0 4.89.98 6.68 2.76a9.47 9.47 0 0 1 2.78 6.67c0 5.39-4.39 9.62-9.48 9.62Zm5.46-7.18c-.3-.15-1.79-.88-2.06-.98-.28-.1-.48-.15-.69.15-.2.3-.79.98-.96 1.18-.18.2-.36.22-.66.07-.3-.15-1.26-.46-2.4-1.48-.89-.78-1.49-1.75-1.66-2.05-.17-.3 0-.46.13-.61.13-.15.3-.36.45-.54.15-.18.2-.31.3-.51.1-.2.05-.38-.02-.54-.07-.15-.69-1.66-.94-2.28-.25-.61-.5-.52-.69-.53l-.59-.01c-.2 0-.52.07-.79.38-.27.3-1.04 1.02-1.04 2.49 0 1.46 1.07 2.88 1.22 3.08.15.2 2.1 3.2 5.07 4.49.71.31 1.27.5 1.7.64.71.23 1.36.2 1.88.12.58-.09 1.79-.73 2.04-1.43.25-.69.25-1.28.18-1.41-.07-.13-.27-.21-.57-.36Z"/>
+                    </svg>
+                    <span>Get Offer on WhatsApp</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Card 4 -->
+            <div class="combo-card">
+              <div class="combo-card__banner">
+                <span class="combo-tag combo-tag--brand">Brand Scaling</span>
+                <div
+                  class="combo-card__image combo__image--clickable"
+                  data-image="images/img2.jpg"
+                  title="Click to zoom image"
+                >
+                  <img src="images/img2.jpg" alt="Brand Growth Combo" loading="lazy" />
+                  <div class="image-zoom-hint">🔍 Tap to Preview</div>
+                </div>
+              </div>
+
+              <div class="combo-card__body">
+                <div class="combo-card__header">
+                  <h3 class="combo-card__title">Brand Growth Combo</h3>
+                  <div class="combo-card__price-box">
+                    <span class="combo-card__old-price">₹2,200</span>
+                    <span class="combo-card__price">₹1,199</span>
+                    <span class="combo-card__discount">45% OFF</span>
+                  </div>
+                </div>
+
+                <p class="combo-card__desc">
+                  Complete personal brand revamp: social banner designs, high-converting promotional reel edit, and profile layout guidance.
+                </p>
+
+                <ul class="combo-card__features">
+                  <li><span class="f-check">✓</span> 1x High-End Promotional / Brand Reel</li>
+                  <li><span class="f-check">✓</span> 3x Social Media Graphic Posts / Carousel</li>
+                  <li><span class="f-check">✓</span> Priority Rush Delivery & Revisions</li>
+                  <li><span class="f-check">✓</span> 1-on-1 Creative Direction Support</li>
+                </ul>
+
+                <div class="combo-card__coupon">
+                  <span class="coupon-label">Coupon:</span>
+                  <code class="coupon-code">TECH05</code>
+                  <span class="coupon-benefit">Extra 5% OFF on WhatsApp</span>
+                </div>
+
+                <div class="combo-card__actions">
+                  <a
+                    href="https://wa.me/6355705208?text=Hi%20VisualEdit,%20I%20am%20interested%20in%20*BRAND%20GROWTH%20COMBO*%20for%20₹1,199%20(Coupon:%20TECH05)"
+                    target="_blank"
+                    rel="noopener"
+                    class="btn btn-whatsapp w-full"
+                  >
+                    <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true">
+                      <path d="M20.52 3.48A11.86 11.86 0 0 0 12.02 0C5.5 0 .25 5.24.25 11.72c0 2.06.54 4.06 1.58 5.84L0 24l6.6-1.72a11.7 11.7 0 0 0 5.4 1.37h.01c6.49 0 11.77-5.24 11.77-11.72 0-3.14-1.24-6.09-3.26-8.19ZM12 21.14h-.01a9.5 9.5 0 0 1-4.85-1.31l-.35-.2-3.92 1.02 1.05-3.82-.23-.39a9.4 9.4 0 0 1-1.45-5.12C2.24 6.45 6.62 2.1 12.02 2.1c2.52 0 4.89.98 6.68 2.76a9.47 9.47 0 0 1 2.78 6.67c0 5.39-4.39 9.62-9.48 9.62Zm5.46-7.18c-.3-.15-1.79-.88-2.06-.98-.28-.1-.48-.15-.69.15-.2.3-.79.98-.96 1.18-.18.2-.36.22-.66.07-.3-.15-1.26-.46-2.4-1.48-.89-.78-1.49-1.75-1.66-2.05-.17-.3 0-.46.13-.61.13-.15.3-.36.45-.54.15-.18.2-.31.3-.51.1-.2.05-.38-.02-.54-.07-.15-.69-1.66-.94-2.28-.25-.61-.5-.52-.69-.53l-.59-.01c-.2 0-.52.07-.79.38-.27.3-1.04 1.02-1.04 2.49 0 1.46 1.07 2.88 1.22 3.08.15.2 2.1 3.2 5.07 4.49.71.31 1.27.5 1.7.64.71.23 1.36.2 1.88.12.58-.09 1.79-.73 2.04-1.43.25-.69.25-1.28.18-1.41-.07-.13-.27-.21-.57-.36Z"/>
+                    </svg>
+                    <span>Get Offer on WhatsApp</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Assurance Banner -->
+          <div class="combo__assurance" data-scroll data-scroll-class="is-inview">
+            <div class="assurance-item">
+              <span class="assurance-icon">⚡</span>
+              <div>
+                <strong>Express 24-48h Delivery</strong>
+                <p>Quick turnaround with live preview links</p>
+              </div>
+            </div>
+            <div class="assurance-item">
+              <span class="assurance-icon">🔄</span>
+              <div>
+                <strong>Revisions Included</strong>
+                <p>We fine-tune until you're completely satisfied</p>
+              </div>
+            </div>
+            <div class="assurance-item">
+              <span class="assurance-icon">🔒</span>
+              <div>
+                <strong>100% Quality Guaranteed</strong>
+                <p>Direct communication via WhatsApp</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
 
       <!-- STATS -->
       <section id="stats" class="section stats" data-scroll-section>
         <div class="container">
-          <h2 class="section__title" data-scroll data-scroll-class="is-inview">
-            Trusted by creators worldwide
-          </h2>
-          <p
-            class="section__subtitle"
-            data-scroll
-            data-scroll-class="is-inview"
-          >
-            Our work, measured.
-          </p>
+          <div class="section__header" data-scroll data-scroll-class="is-inview">
+            <span class="section__badge">Proven Track Record</span>
+            <h2 class="section__title">Delivering Results That Speak</h2>
+            <p class="section__subtitle">
+              Every project is handled with direct founder attention and fast communication.
+            </p>
+          </div>
 
           <div
             class="stats__grid"
@@ -427,68 +821,92 @@
             data-scroll-call="stats"
             data-scroll-repeat="false"
           >
-            <div class="stat">
+            <div class="stat-card">
               <div class="stat__number-wrap">
-                <span class="stat__number" data-target="20">0</span>
+                <span class="stat__number" data-target="25" data-suffix="+">0</span>
               </div>
-              <div class="stat__label">Completed Projects</div>
+              <div class="stat__label">Completed Edits & Projects</div>
             </div>
-            <div class="stat">
+
+            <div class="stat-card">
               <div class="stat__number-wrap">
-                <span class="stat__number" data-target="4">0</span>
+                <span class="stat__number" data-target="100" data-suffix="%">0</span>
               </div>
-              <div class="stat__label">Clients</div>
+              <div class="stat__label">On-Time Delivery Rate</div>
+            </div>
+
+            <div class="stat-card">
+              <div class="stat__number-wrap">
+                <span class="stat__number" data-target="24" data-suffix="h">0</span>
+              </div>
+              <div class="stat__label">Average Turnaround Time</div>
+            </div>
+
+            <div class="stat-card">
+              <div class="stat__number-wrap">
+                <span class="stat__number" data-target="5" data-suffix="★">0</span>
+              </div>
+              <div class="stat__label">Client Satisfaction Rating</div>
             </div>
           </div>
         </div>
       </section>
 
-      <!-- SERVICES -->
+      <!-- SERVICES & ABOUT DEVELOPER -->
       <section id="services" class="section services" data-scroll-section>
         <div class="container">
-          <div class="services__grid">
-            <div class="services__left">
-              <h2
-                class="section__title"
-                data-scroll
-                data-scroll-class="is-inview"
-              >
-                What I can help with
-              </h2>
-              <ul class="points">
-                <li data-scroll data-scroll-class="is-inview">
-                  <span class="check">✓</span> Frontend website designing &
-                  development
+          <div class="about-card" data-scroll data-scroll-class="is-inview">
+            <div class="about-card__content">
+              <span class="section__badge">Creator & Developer</span>
+              <h2 class="about-card__title">Meet Your Creative Tech Partner</h2>
+              <p class="about-card__text">
+                Hi, I'm Raj Laiya — a passionate video editor, frontend designer, and developer behind VisualEdit. I specialize in turning raw footage into captivating visual narratives, crafting brand posters, and building sleek, responsive web experiences.
+              </p>
+
+              <ul class="points-grid">
+                <li class="point-item">
+                  <span class="check">✓</span> High-Retention Reel & Social Video Editing
                 </li>
-                <li
-                  data-scroll
-                  data-scroll-class="is-inview"
-                  data-scroll-delay="0.05"
-                >
-                  <span class="check">✓</span> Bug solving
+                <li class="point-item">
+                  <span class="check">✓</span> Modern Frontend UI/UX Website Design
                 </li>
-                <li
-                  data-scroll
-                  data-scroll-class="is-inview"
-                  data-scroll-delay="0.1"
-                >
-                  <span class="check">✓</span> Code structure formatting
+                <li class="point-item">
+                  <span class="check">✓</span> Code Structure, Optimization & Bug Solving
+                </li>
+                <li class="point-item">
+                  <span class="check">✓</span> 1-on-1 Dedicated Support on WhatsApp
                 </li>
               </ul>
+
+              <div class="about-card__cta">
+                <a
+                  class="btn btn-primary"
+                  href="https://raj-laiya-developer-portfolio.netlify.app"
+                  target="_blank"
+                  rel="noopener"
+                >
+                  <span>Explore Developer Portfolio</span>
+                  <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="7" y1="17" x2="17" y2="7"></line>
+                    <polyline points="7 7 17 7 17 17"></polyline>
+                  </svg>
+                </a>
+              </div>
             </div>
-            <div
-              class="services__right"
-              data-scroll
-              data-scroll-class="is-inview"
-            >
-              <!-- TODO: Replace href with your actual portfolio URL -->
-              <a
-                class="circle-btn circle-btn--photo"
-                href="https://raj-laiya-developer-portfolio.netlify.app"
-                target="_blank"
-                rel="noopener"
-              >
-              </a>
+
+            <div class="about-card__profile">
+              <div class="profile-frame">
+                <img
+                  src="images/photo.jpg"
+                  alt="Raj Laiya - Developer & Video Editor"
+                  class="profile-photo"
+                  onerror="this.src='images/logo.jpg'"
+                />
+                <div class="profile-badge">
+                  <span class="pulse-dot"></span>
+                  <span>Available for Work</span>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -496,206 +914,423 @@
 
       <!-- MARQUEE STRIP -->
       <section class="marquee-band" aria-hidden="true" data-scroll-section>
-        <div class="container">
-          <div class="marquee__track">
-            <span class="marquee__item">the remote editing service</span>
-            <span class="marquee__item">the remote editing service</span>
-            <span class="marquee__item">the remote editing service</span>
-            <span class="marquee__item">the remote editing service</span>
-            <span class="marquee__item">the remote editing service</span>
-            <span class="marquee__item">the remote editing service</span>
-          </div>
+        <div class="marquee__track">
+          <span class="marquee__item">⚡ FAST 24H DELIVERY</span>
+          <span class="marquee__item">🎬 4K VIDEO EDITING</span>
+          <span class="marquee__item">✨ SOUND DESIGN & SFX</span>
+          <span class="marquee__item">🌐 FRONTEND WEB DESIGN</span>
+          <span class="marquee__item">🖼️ CUSTOM POSTERS</span>
+          <span class="marquee__item">💬 DIRECT WHATSAPP SUPPORT</span>
+          <span class="marquee__item">⚡ FAST 24H DELIVERY</span>
+          <span class="marquee__item">🎬 4K VIDEO EDITING</span>
+          <span class="marquee__item">✨ SOUND DESIGN & SFX</span>
         </div>
       </section>
 
       <!-- FAQ -->
       <section id="faq" class="section faq" data-scroll-section>
         <div class="container">
-          <h2 class="section__title" data-scroll data-scroll-class="is-inview">
-            Frequently Asked Questions
-          </h2>
-          <p
-            class="section__subtitle"
-            data-scroll
-            data-scroll-class="is-inview"
-          >
-            Charges, document edits, packs, and delivery details.
-          </p>
+          <div class="section__header" data-scroll data-scroll-class="is-inview">
+            <span class="section__badge">Got Questions?</span>
+            <h2 class="section__title">Frequently Asked Questions</h2>
+            <p class="section__subtitle">
+              Transparent pricing, turnaround times, and delivery workflows.
+            </p>
+          </div>
 
           <div class="faq__list">
-            <details
-              class="faq__item"
-              data-scroll
-              data-scroll-class="is-inview"
-              open
-            >
+            <details class="faq__item" data-scroll data-scroll-class="is-inview" open>
               <summary class="faq__question">
-                60 aur 90 second basic reel edit ka kya charge hai?
-              </summary>
-              <p class="faq__answer">60 sec: 250, 90 sec: 400.</p>
-            </details>
-
-            <details
-              class="faq__item"
-              data-scroll
-              data-scroll-class="is-inview"
-              data-scroll-delay="0.03"
-            >
-              <summary class="faq__question">
-                Kis type ke document edit hote hain?
+                <span>What are the rates for 60-second and 90-second reel edits?</span>
+                <span class="faq__icon"></span>
               </summary>
               <p class="faq__answer">
-                PDF order arranging, PDF merge, PDF converting, resume edit,
-                cover letter edit, aur slide edit. Sirf unethical ya government
-                documents edit nahi hote, jaise PAN card, Aadhaar, ration card,
-                ya kisi bhi tarah ka ID proof.
+                Standard rates start at <strong>₹250 for up to 60 seconds</strong> and <strong>₹400 for up to 90 seconds</strong>. For bulk reel orders or monthly recurring retainers, custom discounted rates are available.
               </p>
             </details>
 
-            <details
-              class="faq__item"
-              data-scroll
-              data-scroll-class="is-inview"
-              data-scroll-delay="0.06"
-            >
+            <details class="faq__item" data-scroll data-scroll-class="is-inview" data-scroll-delay="0.03">
               <summary class="faq__question">
-                Editing pack me kitna data include hoga, lifetime access rahega,
-                aur future me data add hoga?
+                <span>What is the standard delivery time? Is rush delivery available?</span>
+                <span class="faq__icon"></span>
               </summary>
               <p class="faq__answer">
-                Basic developer CapCut me jo tools use karta hai, wo sab include
-                hota hai. Iske saath different BGMs aur direct website access ki
-                BAT files bhi milti hain. Future me naya data add hota hai to
-                WhatsApp par update de diya jata hai. Access abhi lifetime hai,
-                lekin safety ke liye aapko suggest kiya jata hai ki sara data
-                download karke backup rakh lo, taki link change ya technical
-                issue me koi dikkat na ho.
+                Standard delivery is <strong>24 to 48 hours</strong>. Urgent same-day rush delivery is available on request depending on project complexity.
               </p>
             </details>
 
-            <details
-              class="faq__item"
-              data-scroll
-              data-scroll-class="is-inview"
-              data-scroll-delay="0.09"
-            >
+            <details class="faq__item" data-scroll data-scroll-class="is-inview" data-scroll-delay="0.06">
               <summary class="faq__question">
-                Delivery time kitna hota hai aur urgent work lete ho?
+                <span>What document editing and design services do you provide?</span>
+                <span class="faq__icon"></span>
               </summary>
               <p class="faq__answer">
-                Normal edits usually 24-48 hours me deliver ho jate hain. Urgent
-                delivery available hai, lekin timeline aur extra charge project
-                complexity par depend karta hai.
+                We handle PDF organizing, merging, formatting, ATS-friendly resume redesigns, cover letters, and presentation slide decks. <em>Note: We do not edit government IDs, identity proofs, or unethical documents.</em>
               </p>
             </details>
 
-            <details
-              class="faq__item"
-              data-scroll
-              data-scroll-class="is-inview"
-              data-scroll-delay="0.12"
-            >
+            <details class="faq__item" data-scroll data-scroll-class="is-inview" data-scroll-delay="0.09">
               <summary class="faq__question">
-                Revisions kitni milti hain aur final files kis format me
-                milengi?
+                <span>How many revisions are included and how will I receive the final files?</span>
+                <span class="faq__icon"></span>
               </summary>
               <p class="faq__answer">
-                Har project me basic revisions included hoti hain taaki output
-                aapki requirement ke hisab se perfect ho. Final files generally
-                MP4/PDF/PPT format me share ki jati hain, as per project type.
+                Every project includes <strong>2 free revision rounds</strong> to ensure the outcome matches your exact vision. Final high-resolution files are shared via Google Drive or direct WhatsApp links in MP4, PDF, PNG, or PPT formats.
               </p>
             </details>
           </div>
         </div>
       </section>
 
-      <!-- CONTACT -->
+      <!-- CONTACT & INTERACTIVE QUOTE / INQUIRY FORM -->
       <section id="contact" class="section contact" data-scroll-section>
         <div class="container">
-          <h2 class="section__title" data-scroll data-scroll-class="is-inview">
-            Contact for Edit
-          </h2>
-          <p
-            class="section__subtitle"
-            data-scroll
-            data-scroll-class="is-inview"
-          >
-            Reach me on your favorite platform
-          </p>
-
-          <div class="contact__grid">
-            <!-- WhatsApp: prefilled text works without number (user selects contact); replace with your phone to direct message: https://wa.me/1234567890?text=... -->
-            <a
-              class="social circle whatsapp"
-              aria-label="WhatsApp"
-              href="https://wa.me/6355705208?text=can%20you%20edit%20my%20videos%3F"
-              target="_blank"
-              rel="noopener"
-            >
-              <svg viewBox="0 0 24 24" aria-hidden="true">
-                <path
-                  fill="currentColor"
-                  d="M20.52 3.48A11.86 11.86 0 0 0 12.02 0C5.5 0 .25 5.24.25 11.72c0 2.06.54 4.06 1.58 5.84L0 24l6.6-1.72a11.7 11.7 0 0 0 5.4 1.37h.01c6.49 0 11.77-5.24 11.77-11.72 0-3.14-1.24-6.09-3.26-8.19ZM12 21.14h-.01a9.5 9.5 0 0 1-4.85-1.31l-.35-.2-3.92 1.02 1.05-3.82-.23-.39a9.4 9.4 0 0 1-1.45-5.12C2.24 6.45 6.62 2.1 12.02 2.1c2.52 0 4.89.98 6.68 2.76a9.47 9.47 0 0 1 2.78 6.67c0 5.39-4.39 9.62-9.48 9.62Zm5.46-7.18c-.3-.15-1.79-.88-2.06-.98-.28-.1-.48-.15-.69.15-.2.3-.79.98-.96 1.18-.18.2-.36.22-.66.07-.3-.15-1.26-.46-2.4-1.48-.89-.78-1.49-1.75-1.66-2.05-.17-.3 0-.46.13-.61.13-.15.3-.36.45-.54.15-.18.2-.31.3-.51.1-.2.05-.38-.02-.54-.07-.15-.69-1.66-.94-2.28-.25-.61-.5-.52-.69-.53l-.59-.01c-.2 0-.52.07-.79.38-.27.3-1.04 1.02-1.04 2.49 0 1.46 1.07 2.88 1.22 3.08.15.2 2.1 3.2 5.07 4.49.71.31 1.27.5 1.7.64.71.23 1.36.2 1.88.12.58-.09 1.79-.73 2.04-1.43.25-.69.25-1.28.18-1.41-.07-.13-.27-.21-.57-.36Z"
-                />
-              </svg>
-            </a>
-
-            <!-- Instagram: replace USERNAME; message prefill not supported, so we copy text to clipboard on click -->
-            <a
-              class="social circle instagram"
-              aria-label="Instagram"
-              href="https://www.instagram.com/coding_with_rl/"
-              target="_blank"
-              rel="noopener"
-              data-copy-message="can you edit my videos?"
-            >
-              <svg viewBox="0 0 24 24" aria-hidden="true">
-                <path
-                  fill="currentColor"
-                  d="M12 2.2c3.2 0 3.6.01 4.9.07 1.17.05 1.96.24 2.66.5.72.28 1.33.65 1.92 1.24.6.6.97 1.2 1.24 1.92.26.7.45 1.49.5 2.66.06 1.3.07 1.7.07 4.9s-.01 3.6-.07 4.9c-.05 1.17-.24 1.96-.5 2.66-.28.72-.65 1.33-1.24 1.92-.6.6-1.2.97-1.92 1.24-.7.26-1.49.45-2.66.5-1.3.06-1.7.07-4.9.07s-3.6-.01-4.9-.07c-1.17-.05-1.96-.24-2.66-.5-.72-.28-1.33-.65-1.92-1.24-.6-.6-.97-1.2-1.24-1.92-.26-.7-.45-1.49-.5-2.66C2.21 15.6 2.2 15.2 2.2 12s.01-3.6.07-4.9c.05-1.17.24-1.96.5-2.66.28-.72.65-1.33 1.24-1.92.6-.6 1.2-.97 1.92-1.24.7-.26 1.49-.45 2.66-.5C8.4 2.21 8.8 2.2 12 2.2m0-2.2C8.74 0 8.33.01 7.02.07 5.7.13 4.68.34 3.8.67 2.9 1 2.14 1.5 1.38 2.26.62 3.02.12 3.78-.2 4.68c-.33.88-.54 1.9-.6 3.22C-0.01 9.2 0 9.6 0 12s-.01 2.8.07 4.1c.06 1.32.27 2.34.6 3.22.33.9.83 1.66 1.58 2.42.76.76 1.52 1.26 2.42 1.58.88.33 1.9.54 3.22.6C9.2 23.99 9.6 24 12 24s2.8-.01 4.1-.07c1.32-.06 2.34-.27 3.22-.6.9-.33 1.66-.83 2.42-1.58.76-.76 1.26-1.52 1.58-2.42.33-.88.54-1.9.6-3.22.06-1.3.07-1.71.07-4.11s-.01-2.8-.07-4.1c-.06-1.32-.27-2.34-.6-3.22C23.38 2.14 22.88 1.38 22.12.62 21.36-.14 20.6-.64 19.7-.97 18.82-1.3 17.8-1.51 16.48-1.57 15.18-1.63 14.78-1.64 12-1.64Z"
-                />
-                <path
-                  fill="currentColor"
-                  d="M12 5.84A6.16 6.16 0 1 0 18.16 12 6.16 6.16 0 0 0 12 5.84Zm0 10.17A4.01 4.01 0 1 1 16.01 12 4.02 4.02 0 0 1 12 16.01ZM18.4 4.58a1.44 1.44 0 1 0 1.44 1.44 1.44 1.44 0 0 0-1.44-1.44Z"
-                />
-              </svg>
-            </a>
-
-            <!-- LinkedIn: replace YOUR-ID; copy message then open profile -->
-            <a
-              class="social circle linkedin"
-              aria-label="LinkedIn"
-              href="https://www.linkedin.com/in/visual-edit-114033362/"
-              target="_blank"
-              rel="noopener"
-              data-copy-message="can you edit my videos?"
-            >
-              <svg viewBox="0 0 24 24" aria-hidden="true">
-                <path
-                  fill="currentColor"
-                  d="M20.45 20.45h-3.55v-5.6c0-1.34-.02-3.05-1.86-3.05-1.86 0-2.14 1.45-2.14 2.95v5.7H9.35V9h3.4v1.56h.05c.47-.89 1.62-1.83 3.34-1.83 3.58 0 4.24 2.36 4.24 5.42v6.3zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12ZM7.12 20.45H3.56V9h3.56v11.45ZM22.23 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.46c.98 0 1.77-.77 1.77-1.73V1.73C24 .77 23.21 0 22.23 0Z"
-                />
-              </svg>
-            </a>
+          <div class="section__header" data-scroll data-scroll-class="is-inview">
+            <span class="section__badge">Let's Build Something Great</span>
+            <h2 class="section__title">Get a Free Quote & Project Consultation</h2>
+            <p class="section__subtitle">
+              Fill in your project details below to receive an instant estimate or reach out directly on WhatsApp.
+            </p>
           </div>
 
-          <small class="contact__hint"
-            >Tip: For Instagram and LinkedIn, we’ll copy the message to your
-            clipboard and open the app—just paste to send.</small
-          >
+          <div class="contact-layout" data-scroll data-scroll-class="is-inview">
+            <!-- Left Column: Interactive Form -->
+            <div class="form-container">
+              <div class="form-header">
+                <div class="form-header__icon">📝</div>
+                <div>
+                  <h3 class="form-header__title">Project Inquiry & Quote Form</h3>
+                  <p class="form-header__subtitle">We respond within 1-2 hours on WhatsApp</p>
+                </div>
+              </div>
+
+              <form id="project-form" class="quote-form" novalidate>
+                <!-- Row 1: Name & WhatsApp Phone -->
+                <div class="form-row">
+                  <div class="form-group">
+                    <label for="form-name" class="form-label">
+                      Your Name <span class="required">*</span>
+                    </label>
+                    <div class="input-wrapper">
+                      <input
+                        type="text"
+                        id="form-name"
+                        name="name"
+                        class="form-input"
+                        placeholder="e.g. Rahul Sharma"
+                        required
+                        autocomplete="name"
+                      />
+                    </div>
+                  </div>
+
+                  <div class="form-group">
+                    <label for="form-phone" class="form-label">
+                      WhatsApp Number <span class="required">*</span>
+                    </label>
+                    <div class="input-wrapper">
+                      <input
+                        type="tel"
+                        id="form-phone"
+                        name="phone"
+                        class="form-input"
+                        placeholder="+91 98765 43210"
+                        required
+                        autocomplete="tel"
+                      />
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Row 2: Email & Service Required -->
+                <div class="form-row">
+                  <div class="form-group">
+                    <label for="form-email" class="form-label">
+                      Email Address <span class="optional">(Optional)</span>
+                    </label>
+                    <div class="input-wrapper">
+                      <input
+                        type="email"
+                        id="form-email"
+                        name="email"
+                        class="form-input"
+                        placeholder="rahul@example.com"
+                        autocomplete="email"
+                      />
+                    </div>
+                  </div>
+
+                  <div class="form-group">
+                    <label for="form-service" class="form-label">
+                      Service Required <span class="required">*</span>
+                    </label>
+                    <div class="input-wrapper select-wrapper">
+                      <select id="form-service" name="service" class="form-select" required>
+                        <option value="" disabled selected>Choose a service...</option>
+                        <option value="Reels & Shorts Video Edit (60s-90s)">🎬 Reels & Shorts Video Edit (₹250 - ₹400)</option>
+                        <option value="YouTube & Long-Form Video Edit">📹 YouTube & Long-Form Video Edit</option>
+                        <option value="Birthday / Event Special Film">🎂 Birthday / Celebration Event Film</option>
+                        <option value="Poster / Banner / Thumbnail Design">🖼️ Poster / Banner Graphic Design</option>
+                        <option value="Ultimate Editing Combo (₹550)">🔥 Ultimate Editing Combo (₹550)</option>
+                        <option value="Complete Web Dev Package (₹999)">🌐 Frontend Web Dev / Bug Fix (₹999)</option>
+                        <option value="Resume & Slide Deck Design">📄 Resume & Slide Deck Redesign</option>
+                        <option value="Custom Project Consultation">📦 Custom Multi-Asset Package</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Row 3: Budget Range & Urgency -->
+                <div class="form-row">
+                  <div class="form-group">
+                    <label for="form-budget" class="form-label">
+                      Estimated Budget <span class="optional">(INR)</span>
+                    </label>
+                    <div class="input-wrapper select-wrapper">
+                      <select id="form-budget" name="budget" class="form-select">
+                        <option value="₹250 - ₹500">₹250 - ₹500 (Single Reel/Poster)</option>
+                        <option value="₹500 - ₹1,500" selected>₹500 - ₹1,500 (Combos & Multiclips)</option>
+                        <option value="₹1,500 - ₹3,500">₹1,500 - ₹3,500 (Web Dev / YouTube)</option>
+                        <option value="₹3,500+">₹3,500+ (Long-term / Brand Retainer)</option>
+                      </select>
+                    </div>
+                  </div>
+
+                  <div class="form-group">
+                    <label for="form-urgency" class="form-label">
+                      Turnaround Urgency
+                    </label>
+                    <div class="input-wrapper select-wrapper">
+                      <select id="form-urgency" name="urgency" class="form-select">
+                        <option value="⚡ Rush (Within 24 Hours)">⚡ Express Rush (Within 24 Hours)</option>
+                        <option value="⏱️ Standard (2-3 Days)" selected>⏱️ Standard (2-3 Days)</option>
+                        <option value="🗓️ Flexible (This Week)">🗓️ Flexible (Within 1 Week)</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Drive / Footage Link -->
+                <div class="form-group">
+                  <label for="form-link" class="form-label">
+                    Footage / Assets Drive Link <span class="optional">(Optional)</span>
+                  </label>
+                  <div class="input-wrapper">
+                    <input
+                      type="url"
+                      id="form-link"
+                      name="drive_link"
+                      class="form-input"
+                      placeholder="https://drive.google.com/drive/folders/... or Dropbox link"
+                    />
+                  </div>
+                </div>
+
+                <!-- Project Requirements Description -->
+                <div class="form-group">
+                  <label for="form-message" class="form-label">
+                    Project Details & Instructions <span class="required">*</span>
+                  </label>
+                  <div class="input-wrapper">
+                    <textarea
+                      id="form-message"
+                      name="message"
+                      class="form-textarea"
+                      rows="4"
+                      placeholder="Describe what you want: style reference, preferred music, color tone, text captions, or specific ideas..."
+                      required
+                    ></textarea>
+                  </div>
+                  <div class="textarea-hint">
+                    <span>💡 Mention any reference account or song preference</span>
+                    <span id="char-counter">0/500</span>
+                  </div>
+                </div>
+
+                <!-- Form Action Buttons -->
+                <div class="form-actions">
+                  <!-- Primary Action: Send via WhatsApp -->
+                  <button
+                    type="button"
+                    id="btn-whatsapp-submit"
+                    class="btn btn-whatsapp btn-lg flex-1"
+                  >
+                    <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true">
+                      <path d="M20.52 3.48A11.86 11.86 0 0 0 12.02 0C5.5 0 .25 5.24.25 11.72c0 2.06.54 4.06 1.58 5.84L0 24l6.6-1.72a11.7 11.7 0 0 0 5.4 1.37h.01c6.49 0 11.77-5.24 11.77-11.72 0-3.14-1.24-6.09-3.26-8.19ZM12 21.14h-.01a9.5 9.5 0 0 1-4.85-1.31l-.35-.2-3.92 1.02 1.05-3.82-.23-.39a9.4 9.4 0 0 1-1.45-5.12C2.24 6.45 6.62 2.1 12.02 2.1c2.52 0 4.89.98 6.68 2.76a9.47 9.47 0 0 1 2.78 6.67c0 5.39-4.39 9.62-9.48 9.62Zm5.46-7.18c-.3-.15-1.79-.88-2.06-.98-.28-.1-.48-.15-.69.15-.2.3-.79.98-.96 1.18-.18.2-.36.22-.66.07-.3-.15-1.26-.46-2.4-1.48-.89-.78-1.49-1.75-1.66-2.05-.17-.3 0-.46.13-.61.13-.15.3-.36.45-.54.15-.18.2-.31.3-.51.1-.2.05-.38-.02-.54-.07-.15-.69-1.66-.94-2.28-.25-.61-.5-.52-.69-.53l-.59-.01c-.2 0-.52.07-.79.38-.27.3-1.04 1.02-1.04 2.49 0 1.46 1.07 2.88 1.22 3.08.15.2 2.1 3.2 5.07 4.49.71.31 1.27.5 1.7.64.71.23 1.36.2 1.88.12.58-.09 1.79-.73 2.04-1.43.25-.69.25-1.28.18-1.41-.07-.13-.27-.21-.57-.36Z"/>
+                    </svg>
+                    <span>Send via WhatsApp (Instant)</span>
+                  </button>
+
+                  <!-- Secondary Action: Regular Submit -->
+                  <button
+                    type="submit"
+                    id="btn-regular-submit"
+                    class="btn btn-secondary btn-lg"
+                  >
+                    <span>Submit Inquiry</span>
+                  </button>
+                </div>
+
+                <!-- Form feedback alert message -->
+                <div id="form-alert" class="form-alert" aria-live="polite"></div>
+              </form>
+            </div>
+
+            <!-- Right Column: Direct Channels & Reach Out -->
+            <div class="direct-reachout">
+              <div class="reachout-card">
+                <div class="reachout-header">
+                  <span class="reachout-tag">Direct Channels</span>
+                  <h3 class="reachout-title">Fastest Ways to Connect</h3>
+                  <p class="reachout-desc">
+                    Prefer direct messaging? Reach out on any platform below.
+                  </p>
+                </div>
+
+                <div class="channel-list">
+                  <!-- WhatsApp Channel -->
+                  <a
+                    href="https://wa.me/6355705208?text=Hi%20VisualEdit,%20I'm%20interested%20in%20video%20editing%20services!"
+                    target="_blank"
+                    rel="noopener"
+                    class="channel-item channel-item--whatsapp"
+                  >
+                    <div class="channel-icon-wrap whatsapp-icon">
+                      <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor">
+                        <path d="M20.52 3.48A11.86 11.86 0 0 0 12.02 0C5.5 0 .25 5.24.25 11.72c0 2.06.54 4.06 1.58 5.84L0 24l6.6-1.72a11.7 11.7 0 0 0 5.4 1.37h.01c6.49 0 11.77-5.24 11.77-11.72 0-3.14-1.24-6.09-3.26-8.19ZM12 21.14h-.01a9.5 9.5 0 0 1-4.85-1.31l-.35-.2-3.92 1.02 1.05-3.82-.23-.39a9.4 9.4 0 0 1-1.45-5.12C2.24 6.45 6.62 2.1 12.02 2.1c2.52 0 4.89.98 6.68 2.76a9.47 9.47 0 0 1 2.78 6.67c0 5.39-4.39 9.62-9.48 9.62Zm5.46-7.18c-.3-.15-1.79-.88-2.06-.98-.28-.1-.48-.15-.69.15-.2.3-.79.98-.96 1.18-.18.2-.36.22-.66.07-.3-.15-1.26-.46-2.4-1.48-.89-.78-1.49-1.75-1.66-2.05-.17-.3 0-.46.13-.61.13-.15.3-.36.45-.54.15-.18.2-.31.3-.51.1-.2.05-.38-.02-.54-.07-.15-.69-1.66-.94-2.28-.25-.61-.5-.52-.69-.53l-.59-.01c-.2 0-.52.07-.79.38-.27.3-1.04 1.02-1.04 2.49 0 1.46 1.07 2.88 1.22 3.08.15.2 2.1 3.2 5.07 4.49.71.31 1.27.5 1.7.64.71.23 1.36.2 1.88.12.58-.09 1.79-.73 2.04-1.43.25-.69.25-1.28.18-1.41-.07-.13-.27-.21-.57-.36Z"/>
+                      </svg>
+                    </div>
+                    <div class="channel-info">
+                      <span class="channel-name">WhatsApp Direct</span>
+                      <span class="channel-handle">+91 6355705208</span>
+                    </div>
+                    <span class="channel-action">Chat →</span>
+                  </a>
+
+                  <!-- Instagram Channel -->
+                  <a
+                    href="https://www.instagram.com/coding_with_rl/"
+                    target="_blank"
+                    rel="noopener"
+                    class="channel-item channel-item--instagram"
+                    data-copy-message="Hi! I want to discuss a video editing project."
+                  >
+                    <div class="channel-icon-wrap instagram-icon">
+                      <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor">
+                        <path d="M12 2.2c3.2 0 3.6.01 4.9.07 1.17.05 1.96.24 2.66.5.72.28 1.33.65 1.92 1.24.6.6.97 1.2 1.24 1.92.26.7.45 1.49.5 2.66.06 1.3.07 1.7.07 4.9s-.01 3.6-.07 4.9c-.05 1.17-.24 1.96-.5 2.66-.28.72-.65 1.33-1.24 1.92-.6.6-1.2.97-1.92 1.24-.7.26-1.49.45-2.66.5-1.3.06-1.7.07-4.9.07s-3.6-.01-4.9-.07c-1.17-.05-1.96-.24-2.66-.5-.72-.28-1.33-.65-1.92-1.24-.6-.6-.97-1.2-1.24-1.92-.26-.7-.45-1.49-.5-2.66C2.21 15.6 2.2 15.2 2.2 12s.01-3.6.07-4.9c.05-1.17.24-1.96.5-2.66.28-.72.65-1.33 1.24-1.92.6-.6 1.2-.97 1.92-1.24.7-.26 1.49-.45 2.66-.5C8.4 2.21 8.8 2.2 12 2.2m0-2.2C8.74 0 8.33.01 7.02.07 5.7.13 4.68.34 3.8.67 2.9 1 2.14 1.5 1.38 2.26.62 3.02.12 3.78-.2 4.68c-.33.88-.54 1.9-.6 3.22C-0.01 9.2 0 9.6 0 12s-.01 2.8.07 4.1c.06 1.32.27 2.34.6 3.22.33.9.83 1.66 1.58 2.42.76.76 1.52 1.26 2.42 1.58.88.33 1.9.54 3.22.6C9.2 23.99 9.6 24 12 24s2.8-.01 4.1-.07c1.32-.06 2.34-.27 3.22-.6.9-.33 1.66-.83 2.42-1.58.76-.76 1.26-1.52 1.58-2.42.33-.88.54-1.9.6-3.22.06-1.3.07-1.71.07-4.11s-.01-2.8-.07-4.1c-.06-1.32-.27-2.34-.6-3.22C23.38 2.14 22.88 1.38 22.12.62 21.36-.14 20.6-.64 19.7-.97 18.82-1.3 17.8-1.51 16.48-1.57 15.18-1.63 14.78-1.64 12-1.64Z"/>
+                        <path d="M12 5.84A6.16 6.16 0 1 0 18.16 12 6.16 6.16 0 0 0 12 5.84Zm0 10.17A4.01 4.01 0 1 1 16.01 12 4.02 4.02 0 0 1 12 16.01ZM18.4 4.58a1.44 1.44 0 1 0 1.44 1.44 1.44 1.44 0 0 0-1.44-1.44Z"/>
+                      </svg>
+                    </div>
+                    <div class="channel-info">
+                      <span class="channel-name">Instagram</span>
+                      <span class="channel-handle">@coding_with_rl</span>
+                    </div>
+                    <span class="channel-action">DM →</span>
+                  </a>
+
+                  <!-- LinkedIn Channel -->
+                  <a
+                    href="https://www.linkedin.com/in/visual-edit-114033362/"
+                    target="_blank"
+                    rel="noopener"
+                    class="channel-item channel-item--linkedin"
+                    data-copy-message="Hi! I want to discuss a video editing project."
+                  >
+                    <div class="channel-icon-wrap linkedin-icon">
+                      <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor">
+                        <path d="M20.45 20.45h-3.55v-5.6c0-1.34-.02-3.05-1.86-3.05-1.86 0-2.14 1.45-2.14 2.95v5.7H9.35V9h3.4v1.56h.05c.47-.89 1.62-1.83 3.34-1.83 3.58 0 4.24 2.36 4.24 5.42v6.3zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12ZM7.12 20.45H3.56V9h3.56v11.45ZM22.23 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.46c.98 0 1.77-.77 1.77-1.73V1.73C24 .77 23.21 0 22.23 0Z"/>
+                      </svg>
+                    </div>
+                    <div class="channel-info">
+                      <span class="channel-name">LinkedIn</span>
+                      <span class="channel-handle">Visual Edit Studio</span>
+                    </div>
+                    <span class="channel-action">Connect →</span>
+                  </a>
+                </div>
+
+                <!-- Hours & Location Box -->
+                <div class="availability-box">
+                  <div class="avail-row">
+                    <span class="avail-dot"></span>
+                    <span><strong>Status:</strong> Taking New Projects</span>
+                  </div>
+                  <div class="avail-row">
+                    <span>🕒 <strong>Working Hours:</strong> Mon - Sun (10 AM - 11 PM IST)</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
       <!-- FOOTER -->
       <footer class="site-footer" data-scroll-section>
-        <div class="container">
-          <p>
-            © <span id="year"></span> Visual-Edit. All rights reserved. designed
-            by coding_with_rl
-          </p>
+        <div class="container footer-content">
+          <div class="footer-top">
+            <div class="footer-brand">
+              <a class="logo logo--footer" href="#hero" data-scroll-to>
+                <div class="logo__icon">
+                  <span class="logo__glyph">VE</span>
+                </div>
+                <span class="logo__text">Visual<span class="logo__accent">Edit</span></span>
+              </a>
+              <p class="footer-tagline">
+                Modern video editing, creative post-production, and digital design crafted with speed & precision.
+              </p>
+            </div>
+
+            <div class="footer-links">
+              <div class="footer-col">
+                <h4 class="footer-heading">Navigation</h4>
+                <a href="#hero" data-scroll-to>Home</a>
+                <a href="#offerings" data-scroll-to>Services</a>
+                <a href="#gallery" data-scroll-to>Portfolio</a>
+                <a href="#shop" data-scroll-to>Packages</a>
+              </div>
+
+              <div class="footer-col">
+                <h4 class="footer-heading">Explore</h4>
+                <a href="#faq" data-scroll-to>FAQs</a>
+                <a href="#services" data-scroll-to>About Creator</a>
+                <a href="#contact" data-scroll-to>Get Quote</a>
+                <a href="https://drive.google.com/drive/folders/1HxvgWXOBDQcClHMO-lZxTTw88esChpK6" target="_blank" rel="noopener">Drive Portfolio</a>
+              </div>
+
+              <div class="footer-col">
+                <h4 class="footer-heading">Direct Contact</h4>
+                <a href="https://wa.me/6355705208" target="_blank" rel="noopener">WhatsApp: +91 6355705208</a>
+                <a href="https://www.instagram.com/coding_with_rl/" target="_blank" rel="noopener">Instagram: @coding_with_rl</a>
+                <a href="https://raj-laiya-developer-portfolio.netlify.app" target="_blank" rel="noopener">Developer Website</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="footer-bottom">
+            <p>© <span id="year"></span> VisualEdit. All rights reserved. Designed & built by <strong>coding_with_rl</strong>.</p>
+          </div>
         </div>
       </footer>
     </main>
+
+    <!-- Floating WhatsApp Action Button -->
+    <aside class="floating-whatsapp" aria-label="Quick WhatsApp Contact">
+      <a
+        href="https://wa.me/6355705208?text=Hi%20VisualEdit,%20I'm%20interested%20in%20your%20video%20editing%20services!"
+        target="_blank"
+        rel="noopener"
+        class="floating-whatsapp__btn"
+        aria-label="Chat on WhatsApp"
+        title="Chat on WhatsApp (+91 6355705208)"
+      >
+        <span class="floating-pulse"></span>
+        <svg viewBox="0 0 24 24" width="28" height="28" fill="currentColor" aria-hidden="true">
+          <path d="M20.52 3.48A11.86 11.86 0 0 0 12.02 0C5.5 0 .25 5.24.25 11.72c0 2.06.54 4.06 1.58 5.84L0 24l6.6-1.72a11.7 11.7 0 0 0 5.4 1.37h.01c6.49 0 11.77-5.24 11.77-11.72 0-3.14-1.24-6.09-3.26-8.19ZM12 21.14h-.01a9.5 9.5 0 0 1-4.85-1.31l-.35-.2-3.92 1.02 1.05-3.82-.23-.39a9.4 9.4 0 0 1-1.45-5.12C2.24 6.45 6.62 2.1 12.02 2.1c2.52 0 4.89.98 6.68 2.76a9.47 9.47 0 0 1 2.78 6.67c0 5.39-4.39 9.62-9.48 9.62Zm5.46-7.18c-.3-.15-1.79-.88-2.06-.98-.28-.1-.48-.15-.69.15-.2.3-.79.98-.96 1.18-.18.2-.36.22-.66.07-.3-.15-1.26-.46-2.4-1.48-.89-.78-1.49-1.75-1.66-2.05-.17-.3 0-.46.13-.61.13-.15.3-.36.45-.54.15-.18.2-.31.3-.51.1-.2.05-.38-.02-.54-.07-.15-.69-1.66-.94-2.28-.25-.61-.5-.52-.69-.53l-.59-.01c-.2 0-.52.07-.79.38-.27.3-1.04 1.02-1.04 2.49 0 1.46 1.07 2.88 1.22 3.08.15.2 2.1 3.2 5.07 4.49.71.31 1.27.5 1.7.64.71.23 1.36.2 1.88.12.58-.09 1.79-.73 2.04-1.43.25-.69.25-1.28.18-1.41-.07-.13-.27-.21-.57-.36Z"/>
+        </svg>
+        <span class="floating-tooltip">Chat on WhatsApp</span>
+      </a>
+    </aside>
 
     <!-- Video Modal -->
     <div id="video-modal" class="video-modal" aria-hidden="true" role="dialog">
@@ -732,6 +1367,18 @@
           ×
         </button>
         <img id="modal-image" alt="Poster preview" src="" />
+      </div>
+    </div>
+
+    <!-- Inquiry Confirmation Toast/Modal -->
+    <div id="toast-modal" class="toast-modal" aria-hidden="true" role="alert">
+      <div class="toast-modal__content">
+        <div class="toast-modal__icon">🎉</div>
+        <h4 id="toast-title" class="toast-modal__title">Inquiry Received!</h4>
+        <p id="toast-body" class="toast-modal__body">
+          Thank you! We've noted your project details. We will reach out to you via WhatsApp / Email shortly.
+        </p>
+        <button type="button" id="toast-close-btn" class="btn btn-primary btn-sm">Got it!</button>
       </div>
     </div>
 
